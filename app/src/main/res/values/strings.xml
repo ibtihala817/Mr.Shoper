@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Mr.ShoperCapstone</string>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+    </style>
+
+    <style name="AppTheme">Apptheme</style>
+
+</resources>

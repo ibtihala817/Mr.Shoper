@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "447728929022",
+    "project_id": "mrshopercapstone",
+    "storage_bucket": "mrshopercapstone.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:447728929022:android:31488f2ff594d2c693bdaf",
+        "android_client_info": {
+          "package_name": "com.example.mrshopercapstone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "447728929022-ikhp0tigoo2rsp92lkus953mgglf40hl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8rzFARfDZDfx-u8YW2k8MLo0Fcc59wsA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "447728929022-ikhp0tigoo2rsp92lkus953mgglf40hl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
