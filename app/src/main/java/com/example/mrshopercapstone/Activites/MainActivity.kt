@@ -1,7 +1,8 @@
-package com.example.mrshopercapstone
+package com.example.mrshopercapstone.Activites
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.mrshopercapstone.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

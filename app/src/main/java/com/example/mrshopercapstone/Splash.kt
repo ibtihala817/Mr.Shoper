@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.constraintlayout.motion.widget.MotionLayout
+import com.example.mrshopercapstone.Activites.LoginActivity
 import com.example.mrshopercapstone.databinding.ActivitySplash2Binding
 
 
@@ -54,7 +55,7 @@ class Splash : AppCompatActivity() {
             }
 
             override fun onTransitionCompleted(motionLayout: MotionLayout?, currentId: Int) {
-                val intent = Intent(this@Splash, MainActivity::class.java)
+                val intent = Intent(this@Splash, LoginActivity::class.java)
                 startActivity(intent)
                 finish()
             }
