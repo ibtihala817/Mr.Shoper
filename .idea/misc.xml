@@ -5,12 +5,19 @@
       <map>
         <entry key="..\:/Users/ibtih/Desktop/Mr.Shoper/app/src/main/res/drawable/button_background.xml" value="0.1" />
         <entry key="..\:/Users/ibtih/Desktop/Mr.Shoper/app/src/main/res/drawable/buttonback.xml" value="0.15185185185185185" />
+        <entry key="..\:/Users/ibtih/Desktop/Mr.Shoper/app/src/main/res/drawable/ic_baseline_dashboard_24.xml" value="0.14629629629629629" />
+        <entry key="..\:/Users/ibtih/Desktop/Mr.Shoper/app/src/main/res/drawable/ic_baseline_shopping_bag_24.xml" value="0.14629629629629629" />
         <entry key="..\:/Users/ibtih/Desktop/Mr.Shoper/app/src/main/res/drawable/texteditshape.xml" value="0.15185185185185185" />
         <entry key="..\:/Users/ibtih/Desktop/Mr.Shoper/app/src/main/res/layout/activity_login.xml" value="0.2866847826086957" />
-        <entry key="..\:/Users/ibtih/Desktop/Mr.Shoper/app/src/main/res/layout/activity_main.xml" value="0.23097826086956522" />
+        <entry key="..\:/Users/ibtih/Desktop/Mr.Shoper/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/ibtih/Desktop/Mr.Shoper/app/src/main/res/layout/activity_register.xml" value="0.1838768115942029" />
         <entry key="..\:/Users/ibtih/Desktop/Mr.Shoper/app/src/main/res/layout/activity_splash.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/ibtih/Desktop/Mr.Shoper/app/src/main/res/layout/activity_splash2.xml" value="0.22" />
+        <entry key="..\:/Users/ibtih/Desktop/Mr.Shoper/app/src/main/res/layout/dashboard_item_layout.xml" value="0.25" />
+        <entry key="..\:/Users/ibtih/Desktop/Mr.Shoper/app/src/main/res/layout/fragment_dashboard.xml" value="0.1646403242147923" />
+        <entry key="..\:/Users/ibtih/Desktop/Mr.Shoper/app/src/main/res/layout/fragment_dashboard_fragment.xml" value="0.1838768115942029" />
+        <entry key="..\:/Users/ibtih/Desktop/Mr.Shoper/app/src/main/res/menu/bar_menu.xml" value="0.3385416666666667" />
+        <entry key="..\:/Users/ibtih/Desktop/Mr.Shoper/app/src/main/res/menu/dashboard_menu.xml" value="0.3385416666666667" />
       </map>
     </option>
   </component>

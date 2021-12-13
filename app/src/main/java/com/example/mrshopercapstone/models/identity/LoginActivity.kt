@@ -1,4 +1,4 @@
-package com.example.mrshopercapstone.Activites
+package com.example.mrshopercapstone.models.identity
 
 import android.content.Intent
 import android.os.Build
@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.example.mrshopercapstone.main.view.MainActivity
 import com.example.mrshopercapstone.R
 import com.google.firebase.auth.FirebaseAuth
 
@@ -37,19 +38,6 @@ class LoginActivity : AppCompatActivity() {
         val password : EditText = findViewById(R.id.emailId_editText)
         val loginButton: Button = findViewById(R.id.register_button)
         val registerTextView: TextView = findViewById(R.id.register_textView)
-//        ForgetPassword.setOnClickListener(){
-//            val builder : AlertDialog.Builder = AlertDialog.Builder(this)
-//            builder.setTitle("Forget Password")
-//            val view:View = layoutInflater.inflate(R.layout.dialog_forgetpassworf,null)
-//            val username : EditText = view.findViewById(R.id.username)
-//            builder.setView(view)
-//            builder.setPositiveButton("Reset",{_,_->
-//                forgetpassword(username)
-//            })
-//            builder.setNegativeButton("Close",{_,_-> })
-//            builder.show()
-//
-//        }
 //        // display the register textview
         registerTextView.setOnClickListener(){
             startActivity(Intent(this, RegisterActivity::class.java))

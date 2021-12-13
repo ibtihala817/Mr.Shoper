@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="5dp"
-    tools:context=".Activites.RegisterActivity">
+    tools:context=".models.identity.RegisterActivity">
 
 
     <LinearLayout
@@ -25,17 +25,19 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/greatAnAccount_TextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:gravity="center"
+            android:gravity="left"
             android:padding="10dp"
-            android:text="GREATE AN ACCOUNT"
+            android:text="@string/greatanAccount"
             android:textColor="@color/black"
             android:textSize="18sp" />
 
@@ -46,7 +48,7 @@
             android:layout_margin="10dp"
             android:background="@drawable/texteditshape"
             android:ems="10"
-            android:hint="First Name"
+            android:hint="@string/firstname"
             android:inputType="textPersonName"
             android:padding="10dp"
             android:textColorHint="#989898" />
@@ -58,7 +60,7 @@
             android:layout_margin="10dp"
             android:background="@drawable/texteditshape"
             android:ems="10"
-            android:hint="Last Name "
+            android:hint="@string/lastName"
             android:inputType="textPersonName"
             android:padding="10dp"
             android:textColorHint="#989898" />
@@ -70,7 +72,7 @@
             android:layout_margin="10dp"
             android:background="@drawable/texteditshape"
             android:ems="10"
-            android:hint="Email"
+            android:hint="@string/email"
             android:inputType="textPersonName"
             android:padding="10dp"
             android:textColorHint="#989898" />
@@ -82,7 +84,7 @@
             android:layout_margin="10dp"
             android:background="@drawable/texteditshape"
             android:ems="10"
-            android:hint="Password"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:padding="10dp"
             android:textColorHint="@color/gray" />
@@ -94,7 +96,7 @@
             android:layout_margin="10dp"
             android:background="@drawable/texteditshape"
             android:ems="10"
-            android:hint="Conforim Password"
+            android:hint="@string/confirmpassword"
             android:inputType="textPassword"
             android:padding="10dp"
             android:textColorHint="#989898" />
@@ -106,7 +108,7 @@
             android:layout_margin="10dp"
             android:backgroundTint="@color/pinkish"
             android:padding="10dp"
-            android:text="REGISTER"
+            android:text="@string/registerbutton"
             android:textSize="20sp"
             app:cornerRadius="500dp" />
 
@@ -116,7 +118,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:gravity="center"
-            android:text="already have an account! login"
+            android:text="@string/massage"
             android:textColor="#989898"
             android:textSize="16sp" />
 

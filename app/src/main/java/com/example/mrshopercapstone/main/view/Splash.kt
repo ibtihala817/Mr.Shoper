@@ -1,4 +1,4 @@
-package com.example.mrshopercapstone
+package com.example.mrshopercapstone.main.view
 
 import android.content.Intent
 import android.os.Build
@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.constraintlayout.motion.widget.MotionLayout
-import com.example.mrshopercapstone.Activites.LoginActivity
+import com.example.mrshopercapstone.models.identity.LoginActivity
 import com.example.mrshopercapstone.databinding.ActivitySplash2Binding
 
 

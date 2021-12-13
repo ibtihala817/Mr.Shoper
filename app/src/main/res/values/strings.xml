@@ -8,5 +8,27 @@
     </style>
 
     <style name="AppTheme">Apptheme</style>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="noitemfound">noItemFoundTextView</string>
+    <string name="login">LOGIN</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="ForgetPassword">Forget Password?</string>
+    <string name="haveanaccount">Don\'t have an account? Register</string>
+    <string name="greatAnAccount">GreatAnAccount</string>
+    <string name="greatanAccount">Great An Account</string>
+    <string name="firstname">First Name</string>
+    <string name="lastName">Last Name</string>
+    <string name="confirmpassword">Confirm Password</string>
+    <string name="registerbutton">REGISTER</string>
+    <string name="massage">already have an account! login</string>
+    <string name="dashBoard">DashBoard</string>
+    <string name="products">Products</string>
+    <string name="cart">Carts</string>
+    <string name="noitemsfound">No Items Found!</string>
+    <string name="itemName">Item Name</string>
+    <string name="itemprice">Item Price</string>
+    <string name="logout">LOGOUT</string>
 
 </resources>

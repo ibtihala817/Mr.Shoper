@@ -1,4 +1,4 @@
-package com.example.mrshopercapstone.Activites
+package com.example.mrshopercapstone.models.identity
 
 import android.content.Intent
 import android.os.Build
@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.example.mrshopercapstone.main.view.MainActivity
 import com.example.mrshopercapstone.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -62,6 +63,7 @@ class RegisterActivity : AppCompatActivity() {
                     .createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(){
                             task ->
+                        // if the  user success login show is user registered successful
                         if (task.isSuccessful){
                             val firebaseUser: FirebaseUser = task.result!!.user!!
                             Toast.makeText(this,"User Registered Successful" , Toast.LENGTH_SHORT).show()
@@ -72,6 +74,7 @@ class RegisterActivity : AppCompatActivity() {
                             startActivity(intent)
                             finish()
                         }
+                        //if the user not success register show this message
                         else{
                             Toast.makeText(this,task.exception!!.message.toString(), Toast.LENGTH_SHORT).show()
                         }
