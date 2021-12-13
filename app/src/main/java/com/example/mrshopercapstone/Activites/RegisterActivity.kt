@@ -62,6 +62,7 @@ class RegisterActivity : AppCompatActivity() {
                     .createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(){
                             task ->
+                        // if the  user success login show is user registered successful
                         if (task.isSuccessful){
                             val firebaseUser: FirebaseUser = task.result!!.user!!
                             Toast.makeText(this,"User Registered Successful" , Toast.LENGTH_SHORT).show()
@@ -72,6 +73,7 @@ class RegisterActivity : AppCompatActivity() {
                             startActivity(intent)
                             finish()
                         }
+                        //if the user not success register show this message
                         else{
                             Toast.makeText(this,task.exception!!.message.toString(), Toast.LENGTH_SHORT).show()
                         }
