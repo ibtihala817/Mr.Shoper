@@ -52,8 +52,12 @@ class RegisterActivity : AppCompatActivity() {
             val email: String = emailAddress.text.toString()
             val password: String = password.text.toString()
 
-
-            if (email.isNotEmpty() && password.isNotEmpty()){
+            // this is condition for the firstname and lastname and conformpassword and email and password
+            if (firstname.isNotBlank() && lastname.isNotBlank() && conformpassword.isNotBlank() && email.isNotBlank() && password.isNotBlank()){
+//                if password == conformpassword) {
+//                    if (validator.emailIsValid(email)) {
+//                        if (validator.passwordIsValid(passwor))
+            // to get the user info in the firebase
                 FirebaseAuth.getInstance()
                     .createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(){
