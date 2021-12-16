@@ -10,7 +10,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import com.example.mrshopercapstone.main.view.MainActivity
 import com.example.mrshopercapstone.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -53,11 +52,9 @@ class RegisterActivity : AppCompatActivity() {
             val email: String = emailAddress.text.toString()
             val password: String = password.text.toString()
 
-            // this is condition for the firstname and lastname and conformpassword and email and password
+            // this is condition for the firstname and lastname and confirmpassword and email and password
             if (firstname.isNotBlank() && lastname.isNotBlank() && conformpassword.isNotBlank() && email.isNotBlank() && password.isNotBlank()){
-//                if password == conformpassword) {
-//                    if (validator.emailIsValid(email)) {
-//                        if (validator.passwordIsValid(passwor))
+
             // to get the user info in the firebase
                 FirebaseAuth.getInstance()
                     .createUserWithEmailAndPassword(email, password)
@@ -65,10 +62,11 @@ class RegisterActivity : AppCompatActivity() {
                             task ->
                         // if the  user success login show is user registered successful
                         if (task.isSuccessful){
+                            //firebase registered user
                             val firebaseUser: FirebaseUser = task.result!!.user!!
                             Toast.makeText(this,"User Registered Successful" , Toast.LENGTH_SHORT).show()
                             // Navigate to main activity
-                            val intent = Intent(this, MainActivity::class.java)
+                            val intent = Intent(this, LoginActivity::class.java)
                             intent.putExtra("UserId", firebaseUser.uid)
                             intent.putExtra("Email", firebaseUser.email)
                             startActivity(intent)

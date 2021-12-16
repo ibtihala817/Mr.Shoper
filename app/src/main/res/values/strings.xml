@@ -30,5 +30,17 @@
     <string name="itemName">Item Name</string>
     <string name="itemprice">Item Price</string>
     <string name="logout">LOGOUT</string>
+    <string name="GreatAnAccount">Create An Account</string>
+    <string name="Order">order</string>
+    <string name="order">Order</string>
+    <string name="Cart">cart</string>
+    <string name="item">Cart</string>
+    <string name="Account">Account</string>
+    <string name="ProductDetails">Product Details</string>
+    <string name="PriceItem">Price</string>
+    <string name="ItemTitle" />
+    <string name="ItemDetails">Item Details</string>
+    <string name="ADDROCART">ADD TO CART</string>
+    <string name="Order">order</string>
 
 </resources>

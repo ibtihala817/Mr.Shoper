@@ -7,17 +7,4 @@
     android:layout_height="match_parent"
     android:background="@drawable/splash_background"
     app:layoutDescription="@xml/activity_splash2_scene"
-    tools:context=".main.view.Splash">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mr.Shopper"
-        android:textColor="#ffffff"
-        android:textSize="45sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.motion.widget.MotionLayout>
+    tools:context=".view.main.Splash"/>

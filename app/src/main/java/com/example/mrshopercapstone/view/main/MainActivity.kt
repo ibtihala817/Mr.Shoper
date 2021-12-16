@@ -1,4 +1,4 @@
-package com.example.mrshopercapstone.main.view
+package com.example.mrshopercapstone.view.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,14 +10,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val nav: BottomNavigationView = findViewById(R.id.bottomNavigationView)
-//        val navController = findNavController(R.id.bottomNavigationView)
-        val appBarMune = AppBarConfiguration = AppBarMune(
-            setOf(
-                R.id.
-            )
-        )
-    }
 
 
+}
 }

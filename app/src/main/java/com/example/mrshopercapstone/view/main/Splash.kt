@@ -1,4 +1,4 @@
-package com.example.mrshopercapstone.main.view
+package com.example.mrshopercapstone.view.main
 
 import android.content.Intent
 import android.os.Build

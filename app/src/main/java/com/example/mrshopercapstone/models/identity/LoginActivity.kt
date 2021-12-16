@@ -10,7 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import com.example.mrshopercapstone.main.view.MainActivity
+import com.example.mrshopercapstone.view.main.MainActivity
 import com.example.mrshopercapstone.R
 import com.google.firebase.auth.FirebaseAuth
 
@@ -40,7 +40,7 @@ class LoginActivity : AppCompatActivity() {
         val registerTextView: TextView = findViewById(R.id.register_textView)
 //        // display the register textview
         registerTextView.setOnClickListener(){
-            startActivity(Intent(this, RegisterActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
         // display the loginButton
@@ -56,7 +56,7 @@ class LoginActivity : AppCompatActivity() {
                             Toast.makeText(this,"User Logged in Successfully", Toast.LENGTH_SHORT)
                                 .show()
                             //Navigate to MainActivity
-                            val intent = Intent(this, MainActivity::class.java)
+                            val intent = Intent(this, RegisterActivity::class.java)
                             intent.putExtra("UserId", FirebaseAuth.getInstance().currentUser!!.uid)
                             intent.putExtra("Email", FirebaseAuth.getInstance().currentUser!!.email)
                             startActivity(intent)

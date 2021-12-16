@@ -2,12 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:icon="@drawable/ic_baseline_dashboard_24"
-        android:title="@string/dashBoard" />
-    <item
         android:icon="@drawable/product_icon"
         android:title="@string/products" />
     <item
         android:icon="@drawable/ic_baseline_shopping_bag_24"
-        android:title="@string/cart" />
+        android:title="@string/item" />
+    <item
+        android:icon="@drawable/ic_baseline_boy_24"
+        android:title="@string/Account" />
+    <item
+        android:icon="@drawable/ic_baseline_list_alt_24"
+        android:title="@string/order" />
 </menu>

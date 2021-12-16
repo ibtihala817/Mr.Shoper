@@ -11,7 +11,7 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
-        android:layout_height="169dp"
+        android:layout_height="0dp"
         android:background="@drawable/buttonbackground"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,16 +30,15 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.0">
 
-        <TextView
-            android:id="@+id/greatAnAccount_TextView"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_register_activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:gravity="left"
-            android:padding="10dp"
-            android:text="@string/greatanAccount"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:title="@string/GreatAnAccount"
+            app:titleTextColor="@color/black" />
 
         <EditText
             android:id="@+id/firstnamere_edittext"
