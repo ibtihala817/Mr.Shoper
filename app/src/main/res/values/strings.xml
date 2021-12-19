@@ -41,6 +41,12 @@
     <string name="ItemTitle" />
     <string name="ItemDetails">Item Details</string>
     <string name="ADDROCART">ADD TO CART</string>
-    <string name="Order">order</string>
+    <string name="CartItemTitle">Cart Item Title</string>
+    <string name="ProductCart">Product Cart</string>
+    <string name="NoItemFound">No Item Found</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="ShippingCharge">Shipping Charge</string>
+    <string name="TotallAmount">Total Amount</string>
+    <string name="checkout">Checkout</string>
 
 </resources>

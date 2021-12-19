@@ -1,6 +1,7 @@
 package com.example.mrshopercapstone.Repository
 
 import android.content.Context
+import com.example.mrshopercapstone.Api.ShoppingApi
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.lang.Exception
@@ -15,6 +16,8 @@ class ApiRepositoryService (val context: Context){
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
+    private val retrofitApi = retrofitService.create(ShoppingApi::class.java)
+    suspend fun getItem() = retrofitApi.getItem()
     // this is to coordinate actions across the system and it is for restricts the instantiation of a class to one single instance
     companion object {
         private var instance: ApiRepositoryService?= null

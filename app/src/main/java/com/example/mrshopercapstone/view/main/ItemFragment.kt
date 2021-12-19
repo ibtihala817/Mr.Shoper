@@ -5,56 +5,39 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import com.example.mrshopercapstone.R
+import com.example.mrshopercapstone.databinding.FragmentItemBinding
+import com.example.mrshopercapstone.models.items.ItemModel
+import com.example.mrshopercapstone.view.adapters.ItemAdapter
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ItemFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ItemFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
+    private lateinit var binding: FragmentItemBinding
+    private var allItems = listOf<ItemModel>()
+    private lateinit var itemAdapter: ItemAdapter
+    private val itemsViewModel: ItemViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_item, container, false)
+        binding = FragmentItemBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ItemFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ItemFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        itemAdapter = ItemAdapter(itemsViewModel)
+        binding.itemRecyclerView.adapter = itemAdapter
+        observers()
+        itemsViewModel.callItems()
+    }
+    fun observers(){
+        itemsViewModel.itemLiveData.observe(viewLifecycleOwner,{
+            binding.itemProgressBar.animate().alpha(0f).setDuration(1000)
+            itemAdapter.submitList(it)
+            allItems = it
+            binding.itemRecyclerView.animate().alpha(1f)
+
+        })
     }
 }
