@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/itemFragment4">
+    <fragment
+        android:id="@+id/itemFragment4"
+        android:name="com.example.mrshopercapstone.view.main.ItemFragment"
+        android:label="fragment_item"
+        tools:layout="@layout/fragment_item" >
+        <action
+            android:id="@+id/action_itemFragment4_to_itemDetilsFragment3"
+            app:destination="@id/itemDetilsFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment3"
+        android:name="com.example.mrshopercapstone.view.main.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/itemDetilsFragment3"
+        android:name="com.example.mrshopercapstone.view.main.ItemDetilsFragment"
+        android:label="ItemDetilsFragment" >
+        <action
+            android:id="@+id/action_itemDetilsFragment3_to_cartFragment3"
+            app:destination="@id/cartFragment3" />
+    </fragment>
+</navigation>

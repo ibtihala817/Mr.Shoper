@@ -18,6 +18,8 @@ class ItemViewModel: ViewModel() {
     val itemLiveData = MutableLiveData<List<ItemModel>>()
     val itemErrorLiveData = MutableLiveData<String>()
 
+    var selectedItemMutableLiveData = MutableLiveData<ItemModel>()
+
     fun callItems(){
         viewModelScope.launch(Dispatchers.IO){
            // use try and catch for handling http exceptions
@@ -28,12 +30,15 @@ class ItemViewModel: ViewModel() {
                     response.body()?.run {
                         Log.d(TAG,this.toString())
                         // send response to view
-                        itemLiveData.postValue(listOf(this))
+                        //TODO
+                        itemLiveData.postValue(this)
+                        Log.d(TAG,"response success ${response.message()}")
                     }
                 } else{
                     Log.d(TAG,response.message())
                     // send error response to view
                     itemErrorLiveData.postValue(response.message())
+
 
                 }
             } catch (e: Exception){

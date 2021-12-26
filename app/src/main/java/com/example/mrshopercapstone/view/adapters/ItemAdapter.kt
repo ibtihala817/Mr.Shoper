@@ -1,5 +1,6 @@
 package com.example.mrshopercapstone.view.adapters
 
+import android.annotation.SuppressLint
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mrshopercapstone.models.items.ItemModel
 
@@ -9,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import com.example.mrshopercapstone.R
@@ -46,6 +48,11 @@ class ItemAdapter(val viewModel: ItemViewModel) :
        holder.itemNameTextView.text = item.title
        holder.priceTextview.text = "${item.price} SAR"
         Picasso.get().load(item.image).into(holder.itemImageView)
+
+        holder.itemView.setOnClickListener {
+            viewModel.selectedItemMutableLiveData.postValue(item)
+        holder.itemView.findNavController().navigate(R.id.action_itemFragment4_to_itemDetilsFragment3)
+        }
     }
 
     override fun getItemCount(): Int {

@@ -7,8 +7,10 @@ import android.os.Bundle
 import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.constraintlayout.motion.widget.MotionLayout
+import com.example.mrshopercapstone.Repository.ApiRepositoryService
 import com.example.mrshopercapstone.models.identity.LoginActivity
 import com.example.mrshopercapstone.databinding.ActivitySplash2Binding
+import com.example.mrshopercapstone.models.identity.RegisterActivity
 
 
 class Splash : AppCompatActivity() {
@@ -34,7 +36,7 @@ class Splash : AppCompatActivity() {
         setContentView(binding.root)
         super.onCreate(savedInstanceState)
 
-
+        ApiRepositoryService.init(this)
 
         binding.layout.setTransitionListener(object : MotionLayout.TransitionListener {
             override fun onTransitionStarted(
@@ -55,7 +57,7 @@ class Splash : AppCompatActivity() {
             }
 
             override fun onTransitionCompleted(motionLayout: MotionLayout?, currentId: Int) {
-                val intent = Intent(this@Splash, LoginActivity::class.java)
+                val intent = Intent(this@Splash, MainActivity::class.java)
                 startActivity(intent)
                 finish()
             }

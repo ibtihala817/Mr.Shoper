@@ -40,23 +40,23 @@ class LoginActivity : AppCompatActivity() {
         val registerTextView: TextView = findViewById(R.id.register_textView)
 //        // display the register textview
         registerTextView.setOnClickListener(){
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, RegisterActivity::class.java))
             finish()
         }
         // display the loginButton
         loginButton.setOnClickListener(){
             val email: String = emailAddress.text.toString()
-            val password: String = password.text.toString()
+            val passwordlog: String = password.text.toString()
         // setting condition if the email is valid then let the user to save the email and the password in the firebase
-            if(email.isNotEmpty()&& password.isNotEmpty()){
-                FirebaseAuth.getInstance().signInWithEmailAndPassword(email,password)
+            if(email.isNotEmpty()&& passwordlog.isNotEmpty()){
+                FirebaseAuth.getInstance().signInWithEmailAndPassword(email,passwordlog)
                     .addOnCompleteListener(){
                             task ->
                         if (task.isSuccessful){
                             Toast.makeText(this,"User Logged in Successfully", Toast.LENGTH_SHORT)
                                 .show()
                             //Navigate to MainActivity
-                            val intent = Intent(this, RegisterActivity::class.java)
+                            val intent = Intent(this, MainActivity::class.java)
                             intent.putExtra("UserId", FirebaseAuth.getInstance().currentUser!!.uid)
                             intent.putExtra("Email", FirebaseAuth.getInstance().currentUser!!.email)
                             startActivity(intent)

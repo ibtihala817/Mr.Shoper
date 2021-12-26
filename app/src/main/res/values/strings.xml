@@ -48,5 +48,9 @@
     <string name="ShippingCharge">Shipping Charge</string>
     <string name="TotallAmount">Total Amount</string>
     <string name="checkout">Checkout</string>
+    <string name="Catogory">Catogory</string>
+    <string name="Title">Title</string>
+    <string name="Descripition">Descripition</string>
+    <string name="Count">Count</string>
 
 </resources>

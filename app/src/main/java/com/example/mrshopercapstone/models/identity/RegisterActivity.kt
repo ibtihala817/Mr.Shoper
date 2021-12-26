@@ -11,6 +11,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.example.mrshopercapstone.R
+import com.example.mrshopercapstone.view.main.MainActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
@@ -42,7 +43,7 @@ class RegisterActivity : AppCompatActivity() {
         val loginTextView: TextView = findViewById(R.id.loginre_textview)
 
         loginTextView.setOnClickListener(){
-            startActivity(Intent(this,loginTextView::class.java))
+            startActivity(Intent(this,LoginActivity::class.java))
             finish()
         }
         registerButton.setOnClickListener(){
@@ -50,14 +51,14 @@ class RegisterActivity : AppCompatActivity() {
             val lastname: String = lastName.text.toString()
             val conformpassword: String = conformPassowrd.text.toString()
             val email: String = emailAddress.text.toString()
-            val password: String = password.text.toString()
+            val passwordre: String = password.text.toString()
 
             // this is condition for the firstname and lastname and confirmpassword and email and password
-            if (firstname.isNotBlank() && lastname.isNotBlank() && conformpassword.isNotBlank() && email.isNotBlank() && password.isNotBlank()){
+            if (firstname.isNotBlank() && lastname.isNotBlank() && conformpassword.isNotBlank() && email.isNotBlank() && passwordre.isNotBlank()){
 
             // to get the user info in the firebase
                 FirebaseAuth.getInstance()
-                    .createUserWithEmailAndPassword(email, password)
+                    .createUserWithEmailAndPassword(email, passwordre)
                     .addOnCompleteListener(){
                             task ->
                         // if the  user success login show is user registered successful
@@ -66,7 +67,7 @@ class RegisterActivity : AppCompatActivity() {
                             val firebaseUser: FirebaseUser = task.result!!.user!!
                             Toast.makeText(this,"User Registered Successful" , Toast.LENGTH_SHORT).show()
                             // Navigate to main activity
-                            val intent = Intent(this, LoginActivity::class.java)
+                            val intent = Intent(this, MainActivity::class.java)
                             intent.putExtra("UserId", firebaseUser.uid)
                             intent.putExtra("Email", firebaseUser.email)
                             startActivity(intent)

@@ -3,10 +3,12 @@
 
     <item
         android:icon="@drawable/product_icon"
-        android:title="@string/products" />
+        android:title="@string/products"
+        android:id="@+id/ItemFragment"/>
     <item
         android:icon="@drawable/ic_baseline_shopping_bag_24"
-        android:title="@string/item" />
+        android:title="@string/item"
+        android:id="@+id/CartFragment"/>
     <item
         android:icon="@drawable/ic_baseline_boy_24"
         android:title="@string/Account" />

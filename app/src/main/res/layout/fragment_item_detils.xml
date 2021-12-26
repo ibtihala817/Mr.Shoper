@@ -63,6 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:src="@tools:sample/avatars" />
+
             <ToggleButton
                 android:id="@+id/favorite_toggle_button"
                 android:layout_width="24dp"
@@ -70,25 +71,6 @@
                 android:background="@drawable/ic_baseline_favorite_border_24"
                 android:textOff=" "
                 android:textOn=" " />
-            <TextView
-                android:id="@+id/item_details_textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/texteditshape"
-                android:ellipsize="end"
-                android:hint="@string/ItemTitle"
-                android:maxLines="4"
-                android:padding="20dp" />
-
-            <TextView
-                android:id="@+id/quntity_textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/texteditshape"
-                android:hint="@string/PriceItem"
-                android:padding="10dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -96,12 +78,38 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/itemDetailsTextView"
+                    android:id="@+id/CatogoryTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/texteditshape"
-                    android:hint="@string/ItemDetails"
-                    android:padding="10dp" />
+                    android:padding="10dp"
+                    android:text="@string/Catogory" />
+
+                <TextView
+                    android:id="@+id/TitleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/Title" />
+
+                <TextView
+                    android:id="@+id/descripitionTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/Descripition" />
+
+                <TextView
+                    android:id="@+id/count_TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/Count" />
+
+                <androidx.appcompat.widget.AppCompatRatingBar
+                    android:id="@+id/ratingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5" />
 
                 <Button
                     android:id="@+id/register_button"
@@ -116,11 +124,6 @@
 
             </LinearLayout>
 
-            <ToggleButton
-                android:id="@+id/toggleButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ToggleButton" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
