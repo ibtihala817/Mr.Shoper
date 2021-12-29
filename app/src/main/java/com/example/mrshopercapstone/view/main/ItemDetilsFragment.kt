@@ -7,16 +7,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.MutableLiveData
 import androidx.navigation.fragment.findNavController
 import com.example.mrshopercapstone.R
 import com.example.mrshopercapstone.databinding.FragmentItemDetilsBinding
+import com.example.mrshopercapstone.models.items.CartModel
+import com.example.mrshopercapstone.models.items.ItemModel
+import com.example.mrshopercapstone.models.items.Rating
 import com.squareup.picasso.Picasso
 
 private const val TAG = "ItemDetilsFragment"
 class ItemDetilsFragment : Fragment() {
     private lateinit var binding: FragmentItemDetilsBinding
     private val itemViewModel: ItemViewModel by activityViewModels()
+    private lateinit var  itemModelCart: ItemModel
+    //private lateinit var ratting:
+    lateinit var itemModel: MutableLiveData<ItemModel>
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,21 +38,40 @@ class ItemDetilsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         observers()
+        addObserver()
+        //val model =  ItemModel(itemViewModel.selectedItemMutableLiveData.toString(),)
     binding.registerButton.setOnClickListener{
+        itemViewModel.addMyCart( CartModel(itemModelCart.category,
+            itemModelCart.description,itemModelCart.title,itemModelCart.image,
+            itemModelCart.id,itemModelCart.price,itemModelCart.))
+        /*itemViewModel.addMyCart(ItemModel*//*("String",
+            "String",0,"String",0.0,rate,"String")*//*
+        )*/
+        //itemViewModel.addMyCart()
      findNavController().navigate(R.id.action_itemDetilsFragment3_to_cartFragment3)
     }
     }
     fun observers(){
-        itemViewModel.selectedItemMutableLiveData.observe(viewLifecycleOwner,{
-
+         itemViewModel.selectedItemMutableLiveData
+            .observe(viewLifecycleOwner,{
+            itemModelCart = it
             binding.CatogoryTextView.text = it.category
             binding.TitleTextView.text = it.title
             binding.descripitionTextView.text = it.description
             binding.countTextView.text = it.rating.count.toString()
 //          binding.ratingBar.rating = it.rating.rate.toFloat()
-            binding.ratingBar.rating = it.rating.rate.toFloat()
+            //binding.ratingBar.rating = ratting.rate.toFloat()
             Log.d(TAG, it.rating.rate.toString())
             Picasso.get().load(it.image).into(binding.itemImageView)
         })
+
+    }
+
+    fun addObserver(){
+        itemViewModel.addLiveData.observe(viewLifecycleOwner,{
+            itemModel = itemViewModel.selectedItemMutableLiveData
+            //Toast.makeText(requireActivity(), "your order has been added", Toast.LENGTH_SHORT).show()
+        })
+
     }
     }

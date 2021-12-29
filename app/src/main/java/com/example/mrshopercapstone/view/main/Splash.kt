@@ -1,5 +1,6 @@
 package com.example.mrshopercapstone.view.main
 
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +13,9 @@ import com.example.mrshopercapstone.models.identity.LoginActivity
 import com.example.mrshopercapstone.databinding.ActivitySplash2Binding
 import com.example.mrshopercapstone.models.identity.RegisterActivity
 
-
+const val SHARED_PREF_FILE="login state"
+const val STATE="state"
+const val USER_ID= "userId"
 class Splash : AppCompatActivity() {
 
     private lateinit var binding: ActivitySplash2Binding
@@ -34,6 +37,7 @@ class Splash : AppCompatActivity() {
        //////////////////////////////////////////////
         binding = ActivitySplash2Binding.inflate(layoutInflater)
         setContentView(binding.root)
+        val sharedPref = getSharedPreferences(SHARED_PREF_FILE,Context.MODE_PRIVATE)
         super.onCreate(savedInstanceState)
 
         ApiRepositoryService.init(this)
@@ -55,11 +59,17 @@ class Splash : AppCompatActivity() {
             ) {
 
             }
-
+            // shared preferences
             override fun onTransitionCompleted(motionLayout: MotionLayout?, currentId: Int) {
-                val intent = Intent(this@Splash, MainActivity::class.java)
-                startActivity(intent)
-                finish()
+                if (sharedPref.getBoolean(STATE,false)) {
+                    val intent = Intent(this@Splash, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }else{
+                    val intent = Intent(this@Splash,LoginActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
             }
 
             override fun onTransitionTrigger(
