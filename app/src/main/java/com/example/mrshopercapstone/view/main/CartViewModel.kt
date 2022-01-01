@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.mrshopercapstone.Repository.ApiCartRepositoryService
 import com.example.mrshopercapstone.models.items.CartModel
+import com.example.mrshopercapstone.models.items.ItemModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -14,8 +15,14 @@ private const val TAG = "CartViewModel"
 class CartViewModel(): ViewModel() {
     private val apiRepo = ApiCartRepositoryService()
     val myCartLiveData = MutableLiveData<List<CartModel>>()
+    val myCartLiveErrorData = MutableLiveData<String>()
     val editLiveData = MutableLiveData<String>()
     val deleteLiveData = MutableLiveData<String>()
+
+//    var id = ""
+//    var image = ""
+//    var price = 0
+//    var title = ""
 
     fun callMyCart(){
 
@@ -59,6 +66,25 @@ class CartViewModel(): ViewModel() {
                     Log.d(TAG, this.toString())
                     deleteLiveData.postValue("successful")
                 }
+            }
+        }
+    }
+    fun addMyCart(myCartBody : ItemModel){
+        viewModelScope.launch(Dispatchers.IO){
+            try {
+                val response = apiRepo.addMyCart(CartModel(myCartBody.id.toString(),myCartBody.image,myCartBody.price.toInt(),myCartBody.title))
+                if (response.isSuccessful){
+                    response.body()?.run {
+                        Log.d(TAG,this.toString())
+
+                    }
+                }else{
+                    Log.d(TAG,response.message())
+
+                }
+            }catch (e: java.lang.Exception){
+                Log.d(TAG, e.message.toString())
+
             }
         }
     }

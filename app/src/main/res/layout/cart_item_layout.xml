@@ -16,9 +16,8 @@
 
         <ImageView
             android:id="@+id/cartImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
             tools:srcCompat="@tools:sample/avatars" />
     </LinearLayout>
 
@@ -28,7 +27,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/cartItemTextView"
@@ -63,9 +63,9 @@
                 <TextView
                     android:id="@+id/quntitycart_textView"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_height="match_parent"
                     android:gravity="center"
+                    android:padding="10dp"
                     android:text="1" />
 
                 <ImageButton

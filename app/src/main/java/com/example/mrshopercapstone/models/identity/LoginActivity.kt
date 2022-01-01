@@ -49,7 +49,7 @@ class LoginActivity : AppCompatActivity() {
         val registerTextView: TextView = findViewById(R.id.register_textView)
 //        // display the register textview
         registerTextView.setOnClickListener(){
-            startActivity(Intent(this, RegisterActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
         // display the loginButton

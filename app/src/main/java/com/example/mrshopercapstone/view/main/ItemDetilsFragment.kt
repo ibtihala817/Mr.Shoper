@@ -22,10 +22,12 @@ private const val TAG = "ItemDetilsFragment"
 class ItemDetilsFragment : Fragment() {
     private lateinit var binding: FragmentItemDetilsBinding
     private val itemViewModel: ItemViewModel by activityViewModels()
-    private lateinit var  itemModelCart: ItemModel
+    // private lateinit var  itemModelCart: ItemModel
     //private lateinit var ratting:
+    private val cartViewModel: CartViewModel by activityViewModels()
     lateinit var itemModel: MutableLiveData<ItemModel>
 
+    lateinit var cartItem: ItemModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,16 +39,31 @@ class ItemDetilsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        observers()
-        addObserver()
+
+        Log.d(TAG, "ID: ${itemViewModel.id}")
+         val cart = ItemModel(
+             "true",
+             "true",
+             itemViewModel.id,
+             itemViewModel.image,
+             itemViewModel.price.toDouble(),
+             itemViewModel.title
+
+         )
+
+        //val ItemCart : ItemModel()
+         observers()
+//        addObserver()
         //val model =  ItemModel(itemViewModel.selectedItemMutableLiveData.toString(),)
-    binding.registerButton.setOnClickListener{
-        itemViewModel.addMyCart( CartModel(itemModelCart.category,
-            itemModelCart.description,itemModelCart.title,itemModelCart.image,
-            itemModelCart.id,itemModelCart.price,itemModelCart.))
-        /*itemViewModel.addMyCart(ItemModel*//*("String",
-            "String",0,"String",0.0,rate,"String")*//*
-        )*/
+    binding.registerButton.setOnClickListener(){
+
+        observers()
+        cartViewModel.addMyCart(cartItem)
+//        CartViewModel.
+
+//        itemViewModel.addMyCart(ItemModel*//*("String",
+//            "String",0,"String",0.0,rate,"String")*//*
+//        )*/
         //itemViewModel.addMyCart()
      findNavController().navigate(R.id.action_itemDetilsFragment3_to_cartFragment3)
     }
@@ -54,24 +71,25 @@ class ItemDetilsFragment : Fragment() {
     fun observers(){
          itemViewModel.selectedItemMutableLiveData
             .observe(viewLifecycleOwner,{
-            itemModelCart = it
+                cartItem = it
+//            itemModelCart = it
             binding.CatogoryTextView.text = it.category
             binding.TitleTextView.text = it.title
             binding.descripitionTextView.text = it.description
-            binding.countTextView.text = it.rating.count.toString()
+//            binding.countTextView.text = it.rating.count.toString()
 //          binding.ratingBar.rating = it.rating.rate.toFloat()
-            //binding.ratingBar.rating = ratting.rate.toFloat()
-            Log.d(TAG, it.rating.rate.toString())
+//            binding.ratingBar.rating = ratting.rate.toFloat()
+//            Log.d(TAG, it.rating.rate.toString())
             Picasso.get().load(it.image).into(binding.itemImageView)
         })
 
     }
 
-    fun addObserver(){
-        itemViewModel.addLiveData.observe(viewLifecycleOwner,{
-            itemModel = itemViewModel.selectedItemMutableLiveData
-            //Toast.makeText(requireActivity(), "your order has been added", Toast.LENGTH_SHORT).show()
-        })
-
-    }
+//    fun addObserver(){
+//        itemViewModel.addLiveData.observe(viewLifecycleOwner,{
+//            itemModel = itemViewModel.selectedItemMutableLiveData
+//            //Toast.makeText(requireActivity(), "your order has been added", Toast.LENGTH_SHORT).show()
+//        })
+//
+//    }
     }

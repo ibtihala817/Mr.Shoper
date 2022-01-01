@@ -17,12 +17,18 @@ private const val TAG = "ItemViewModel"
 class ItemViewModel: ViewModel() {
     // getting instance from api service repository with companion object function
     private val apiRepo = ApiRepositoryService.get()
-    private val cartApiRepo = ApiCartRepositoryService()
+//   private val cartApiRepo = ApiCartRepositoryService()
     val itemLiveData = MutableLiveData<List<ItemModel>>()
     val itemErrorLiveData = MutableLiveData<String>()
-    val deleteErrorLiveData = MutableLiveData<String>()
+  val deleteErrorLiveData = MutableLiveData<String>()
     val addLiveData = MutableLiveData<String>()
     var selectedItemMutableLiveData = MutableLiveData<ItemModel>()
+
+    var id = -1
+    var image = ""
+    var price = 0
+    var title = ""
+
 
     fun callItems(){
         viewModelScope.launch(Dispatchers.IO){
@@ -34,7 +40,7 @@ class ItemViewModel: ViewModel() {
                     response.body()?.run {
                         Log.d(TAG,this.toString())
                         // send response to view
-                        //TODO
+
                         itemLiveData.postValue(this)
                         Log.d(TAG,"response success ${response.message()}")
                     }
@@ -51,24 +57,24 @@ class ItemViewModel: ViewModel() {
             }
         }
     }
-    fun addMyCart(MyCartBody : CartModel){
-        viewModelScope.launch(Dispatchers.IO){
-            try {
-                val response = cartApiRepo.addMyCart(MyCartBody)
-                if (response.isSuccessful){
-                    response.body()?.run {
-                        Log.d(TAG,this.toString())
-                        addLiveData.postValue(this.toString())
-                        Log.d(TAG,"response success ${response.message()}")
-                    }
-                }else{
-                    Log.d(TAG,response.message())
-                    deleteErrorLiveData.postValue(response.message())
-                }
-            }catch (e: Exception){
-                Log.d(TAG, e.message.toString())
-                deleteErrorLiveData.postValue(e.message.toString())
-            }
-        }
-    }
+//    fun addMyCart(MyCartBody : CartModel){
+//        viewModelScope.launch(Dispatchers.IO){
+//            try {
+//                val response = cartApiRepo.addMyCart(CartModel(MyCartBody.id,MyCartBody.image,MyCartBody.price.toInt(),MyCartBody.title))
+//                if (response.isSuccessful){
+//                    response.body()?.run {
+//                        Log.d(TAG,this.toString())
+//                        addLiveData.postValue(this.toString())
+//                        Log.d(TAG,"response success ${response.message()}")
+//                    }
+//                }else{
+//                    Log.d(TAG,response.message())
+//                    deleteErrorLiveData.postValue(response.message())
+//                }
+//            }catch (e: Exception){
+//                Log.d(TAG, e.message.toString())
+//                deleteErrorLiveData.postValue(e.message.toString())
+//            }
+//        }
+//    }
 }

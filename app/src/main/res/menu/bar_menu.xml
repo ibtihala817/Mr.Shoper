@@ -4,11 +4,11 @@
     <item
         android:icon="@drawable/product_icon"
         android:title="@string/products"
-        android:id="@+id/ItemFragment"/>
+        android:id="@+id/itemFragment4"/>
     <item
         android:icon="@drawable/ic_baseline_shopping_bag_24"
         android:title="@string/item"
-        android:id="@+id/CartFragment"/>
+        android:id="@+id/cartFragment3"/>
     <item
         android:icon="@drawable/ic_baseline_boy_24"
         android:title="@string/Account" />

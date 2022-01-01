@@ -3,6 +3,7 @@ package com.example.mrshopercapstone.view.main
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
@@ -35,6 +36,14 @@ class ItemFragment : Fragment() {
 
         itemsViewModel.callItems()
     }
+
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        when(item.itemId){
+//            R.id.CartFragment -> findNavController().navigate(R.id.action_itemFragment4_to_itemDetilsFragment3)
+//            R.id.ItemFragment -> findNavController().navigate(R.id.action_itemDetilsFragment3_to_cartFragment3)
+//        }
+//        return super.onOptionsItemSelected(item)
+//    }
     fun observer(){
         itemsViewModel.itemLiveData.observe(viewLifecycleOwner,{
             binding.itemProgressBar.animate().alpha(0f).setDuration(1000)

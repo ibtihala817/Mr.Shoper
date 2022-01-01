@@ -15,7 +15,7 @@ class CartFragment : Fragment() {
 
 
     private lateinit var binding: FragmentCartBinding
-    private var allcart = listOf<CartModel>()
+//    private var allcart = listOf<CartModel>()
     private lateinit var cartAdapter : CartAdapter
     private val cartViewModel : CartViewModel by activityViewModels()
 
