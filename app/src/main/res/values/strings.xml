@@ -39,7 +39,6 @@
     <string name="ProductDetails">Product Details</string>
     <string name="PriceItem">Price</string>
     <string name="ItemTitle" />
-    <string name="ItemDetails">Item Details</string>
     <string name="ADDROCART">ADD TO CART</string>
     <string name="CartItemTitle">Cart Item Title</string>
     <string name="ProductCart">Product Cart</string>
@@ -52,5 +51,10 @@
     <string name="Title">Title</string>
     <string name="Descripition">Descripition</string>
     <string name="Count">Count</string>
+    <string name="ItemDetails">Item Details</string>
+    <string name="MyCart">My Cart</string>
+    <string name="Items">Items</string>
+    <string name="WELCOME">WELCOME</string>
+    <string name="WELCOMEBACK">WELCOME BACK</string>
 
 </resources>

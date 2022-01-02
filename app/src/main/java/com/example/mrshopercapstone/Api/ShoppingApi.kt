@@ -7,6 +7,5 @@ import retrofit2.http.Query
 
 interface ShoppingApi {
    @GET("/products")
-   //TODO
        suspend fun getItem():Response<List<ItemModel>>
 }

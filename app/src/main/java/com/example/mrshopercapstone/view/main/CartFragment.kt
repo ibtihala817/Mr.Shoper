@@ -15,7 +15,7 @@ class CartFragment : Fragment() {
 
 
     private lateinit var binding: FragmentCartBinding
-//    private var allcart = listOf<CartModel>()
+
     private lateinit var cartAdapter : CartAdapter
     private val cartViewModel : CartViewModel by activityViewModels()
 
@@ -38,7 +38,7 @@ class CartFragment : Fragment() {
     fun observers(){
     cartViewModel.myCartLiveData.observe(viewLifecycleOwner,{
         cartAdapter.sumbitList(it)
-//        allcart = it
+
         binding.cartRecyclerView.animate().alpha(1f)
     })
 

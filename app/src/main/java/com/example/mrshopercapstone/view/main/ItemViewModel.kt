@@ -17,11 +17,8 @@ private const val TAG = "ItemViewModel"
 class ItemViewModel: ViewModel() {
     // getting instance from api service repository with companion object function
     private val apiRepo = ApiRepositoryService.get()
-//   private val cartApiRepo = ApiCartRepositoryService()
     val itemLiveData = MutableLiveData<List<ItemModel>>()
     val itemErrorLiveData = MutableLiveData<String>()
-  val deleteErrorLiveData = MutableLiveData<String>()
-    val addLiveData = MutableLiveData<String>()
     var selectedItemMutableLiveData = MutableLiveData<ItemModel>()
 
     var id = -1
@@ -57,24 +54,4 @@ class ItemViewModel: ViewModel() {
             }
         }
     }
-//    fun addMyCart(MyCartBody : CartModel){
-//        viewModelScope.launch(Dispatchers.IO){
-//            try {
-//                val response = cartApiRepo.addMyCart(CartModel(MyCartBody.id,MyCartBody.image,MyCartBody.price.toInt(),MyCartBody.title))
-//                if (response.isSuccessful){
-//                    response.body()?.run {
-//                        Log.d(TAG,this.toString())
-//                        addLiveData.postValue(this.toString())
-//                        Log.d(TAG,"response success ${response.message()}")
-//                    }
-//                }else{
-//                    Log.d(TAG,response.message())
-//                    deleteErrorLiveData.postValue(response.message())
-//                }
-//            }catch (e: Exception){
-//                Log.d(TAG, e.message.toString())
-//                deleteErrorLiveData.postValue(e.message.toString())
-//            }
-//        }
-//    }
 }

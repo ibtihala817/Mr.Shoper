@@ -15,14 +15,11 @@ private const val TAG = "CartViewModel"
 class CartViewModel(): ViewModel() {
     private val apiRepo = ApiCartRepositoryService()
     val myCartLiveData = MutableLiveData<List<CartModel>>()
-    val myCartLiveErrorData = MutableLiveData<String>()
+
     val editLiveData = MutableLiveData<String>()
     val deleteLiveData = MutableLiveData<String>()
 
-//    var id = ""
-//    var image = ""
-//    var price = 0
-//    var title = ""
+
 
     fun callMyCart(){
 

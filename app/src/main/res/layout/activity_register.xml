@@ -11,11 +11,11 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/buttonbackground"
+        android:layout_height="169dp"
+        android:background="@drawable/splashfiley"
         android:orientation="vertical"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,15 +30,15 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.0">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_register_activity"
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
-            app:title="@string/GreatAnAccount"
-            app:titleTextColor="@color/black" />
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:text="@string/WELCOME"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
 
         <EditText
             android:id="@+id/firstnamere_edittext"

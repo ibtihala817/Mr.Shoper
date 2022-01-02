@@ -1,12 +1,19 @@
 package com.example.mrshopercapstone.view.main
 
+import android.content.Context
+import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.net.Uri
 import android.nfc.Tag
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.MutableLiveData
@@ -17,16 +24,13 @@ import com.example.mrshopercapstone.models.items.CartModel
 import com.example.mrshopercapstone.models.items.ItemModel
 import com.example.mrshopercapstone.models.items.Rating
 import com.squareup.picasso.Picasso
+import java.io.ByteArrayOutputStream
 
 private const val TAG = "ItemDetilsFragment"
 class ItemDetilsFragment : Fragment() {
     private lateinit var binding: FragmentItemDetilsBinding
     private val itemViewModel: ItemViewModel by activityViewModels()
-    // private lateinit var  itemModelCart: ItemModel
-    //private lateinit var ratting:
     private val cartViewModel: CartViewModel by activityViewModels()
-    lateinit var itemModel: MutableLiveData<ItemModel>
-
     lateinit var cartItem: ItemModel
 
     override fun onCreateView(
@@ -50,46 +54,50 @@ class ItemDetilsFragment : Fragment() {
              itemViewModel.title
 
          )
-
-        //val ItemCart : ItemModel()
+        // for the sharing the image
+//        binding.shareToggleButton.setOnClickListener {
+//            val image:Bitmap?= getBitmapFromView(binding.itemImageView)
+//            val share= Intent(Intent.ACTION_SEND)
+//            share.type="image/*"
+//            share.putExtra(Intent.EXTRA_STREAM,getImageUri(requireActivity(),image!!))
+//            startActivity(Intent.createChooser(share, "Share Via:"))
+//
+//        }
+//
+//    }
+//       private fun getBitmapFromView(view: ImageView):Bitmap?{
+//       val bitmap= Bitmap.createBitmap(view.width,view.height,Bitmap.Config.ARGB_8888)
+//       val paint= Canvas(bitmap)
+//       view.draw(paint)
+//       return bitmap
+//
+//}
+//        private fun getImageUri(inContext: Context, inImage:Bitmap): Uri?{
+//            val byte= ByteArrayOutputStream()
+//            inImage.compress(Bitmap.CompressFormat.JPEG,100,byte)
+//            val path= MediaStore.Images.Media.insertImage(inContext.contentResolver,inImage,"Title",null)
+//            return Uri.parse(path)
+//
+//        }
+        ////////////////////////////////////////////////////
          observers()
-//        addObserver()
-        //val model =  ItemModel(itemViewModel.selectedItemMutableLiveData.toString(),)
     binding.registerButton.setOnClickListener(){
 
         observers()
         cartViewModel.addMyCart(cartItem)
-//        CartViewModel.
-
-//        itemViewModel.addMyCart(ItemModel*//*("String",
-//            "String",0,"String",0.0,rate,"String")*//*
-//        )*/
-        //itemViewModel.addMyCart()
      findNavController().navigate(R.id.action_itemDetilsFragment3_to_cartFragment3)
     }
     }
+
     fun observers(){
          itemViewModel.selectedItemMutableLiveData
             .observe(viewLifecycleOwner,{
                 cartItem = it
-//            itemModelCart = it
-            binding.CatogoryTextView.text = it.category
-            binding.TitleTextView.text = it.title
-            binding.descripitionTextView.text = it.description
-//            binding.countTextView.text = it.rating.count.toString()
-//          binding.ratingBar.rating = it.rating.rate.toFloat()
-//            binding.ratingBar.rating = ratting.rate.toFloat()
-//            Log.d(TAG, it.rating.rate.toString())
-            Picasso.get().load(it.image).into(binding.itemImageView)
+                binding.CatogoryTextView.text = it.category
+                binding.TitleTextView.text = it.title
+                binding.descripitionTextView.text = it.description
+                Picasso.get().load(it.image).into(binding.itemImageView)
         })
 
     }
-
-//    fun addObserver(){
-//        itemViewModel.addLiveData.observe(viewLifecycleOwner,{
-//            itemModel = itemViewModel.selectedItemMutableLiveData
-//            //Toast.makeText(requireActivity(), "your order has been added", Toast.LENGTH_SHORT).show()
-//        })
-//
-//    }
     }

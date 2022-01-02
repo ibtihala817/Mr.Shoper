@@ -21,7 +21,7 @@ class Splash : AppCompatActivity() {
     private lateinit var binding: ActivitySplash2Binding
     override fun onCreate(savedInstanceState: Bundle?) {
         ////////////////////////////////////////////////////////////
-        // for the top bar to gone in the splash and set the fullscreen in android R
+        // for the status bar to gone in the splash and set the fullscreen in android R
         @Suppress("DEPRECATION")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             window.insetsController?.hide(WindowInsets.Type.statusBars())

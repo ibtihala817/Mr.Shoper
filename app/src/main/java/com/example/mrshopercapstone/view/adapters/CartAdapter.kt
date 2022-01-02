@@ -47,28 +47,16 @@ class CartAdapter(var viewModel: CartViewModel) :
 
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
         val item = differ.currentList[position]
-//        var count = item.count
-//        val essinalprice = item.price*count
+
         holder.titleCartTextView.text = item.title
         holder.priceCartTextView.text = "${item.price} SAR"
         Picasso.get().load(item.image).into(holder.cartImageView)
-//        holder.qunitityTextview.text = item.count.toString()
+
         holder.minusToggleButton.setOnClickListener {
-//        if (count >1 ){
-//            count--
-//            holder.qunitityTextview.text = count.toString()
-//            holder.priceCartTextView.text = "${essinalprice*count} SAR"
-//            item.price = essinalprice*count
-//            item.count = count
-//            viewModel.editMyCart(item)
-//        }
+
         }
         holder.plusToggleButton.setOnClickListener {
-//        count++
-//        holder.qunitityTextview.text = count.toString()
-//        holder.priceCartTextView.text = "${essinalprice*count} SAR"
-//        item.price = essinalprice*count
-//        item.count = count
+
         viewModel.editMyCart(item)
 
         }
@@ -82,7 +70,7 @@ class CartAdapter(var viewModel: CartViewModel) :
     override fun getItemCount(): Int {
         return differ.currentList.size
     }
-    //TODO
+
     fun sumbitList(list: List<CartModel>){
         differ.submitList(list)
     }
@@ -92,7 +80,7 @@ class CartAdapter(var viewModel: CartViewModel) :
         val cartImageView: ImageView = itemView.findViewById(R.id.cartImage)
         val minusToggleButton: ImageButton = itemView.findViewById(R.id.minus_imageButton)
         val plusToggleButton: ImageButton = itemView.findViewById(R.id.plus_imageButton)
-//        val qunitityTextview: TextView = itemView.findViewById(R.id.quntitycart_textView)
+        val qunitityTextview: TextView = itemView.findViewById(R.id.quntitycart_textView)
         val deleteToggleButton: ImageButton = itemView.findViewById(R.id.delete_image_button)
     }
 }

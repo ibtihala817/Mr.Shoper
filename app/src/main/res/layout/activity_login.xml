@@ -11,8 +11,9 @@
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="169dp"
-        android:background="@drawable/buttonbackground"
+        android:background="@drawable/splashfiley"
         android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,8 +21,8 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/login"
+        android:layout_marginTop="20dp"
+        android:text="@string/WELCOMEBACK"
         android:textColor="#0E0E0E"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
