@@ -10,7 +10,6 @@ import com.example.mrshopercapstone.R
 import com.example.mrshopercapstone.databinding.FragmentCartBinding
 import com.example.mrshopercapstone.models.items.CartModel
 import com.example.mrshopercapstone.view.adaptersimport.CartAdapter
-
 class CartFragment : Fragment() {
 
 
@@ -36,11 +35,11 @@ class CartFragment : Fragment() {
     }
 
     fun observers(){
-    cartViewModel.myCartLiveData.observe(viewLifecycleOwner,{
-        cartAdapter.sumbitList(it)
+        cartViewModel.myCartLiveData.observe(viewLifecycleOwner,{
+            cartAdapter.sumbitList(it)
 
-        binding.cartRecyclerView.animate().alpha(1f)
-    })
+            binding.cartRecyclerView.animate().alpha(1f)
+        })
 
     }
 }

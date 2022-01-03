@@ -26,6 +26,7 @@ import com.example.mrshopercapstone.models.items.Rating
 import com.squareup.picasso.Picasso
 import java.io.ByteArrayOutputStream
 
+
 private const val TAG = "ItemDetilsFragment"
 class ItemDetilsFragment : Fragment() {
     private lateinit var binding: FragmentItemDetilsBinding
@@ -37,7 +38,7 @@ class ItemDetilsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentItemDetilsBinding.inflate(layoutInflater, container, false)
+        binding = FragmentItemDetilsBinding.inflate(layoutInflater ,container, false)
         return binding.root
     }
 
@@ -55,49 +56,43 @@ class ItemDetilsFragment : Fragment() {
 
         )
         // for the sharing the image
-        binding.shareToggleButton.setOnClickListener {
-            val image: Bitmap? = getBitmapFromView(binding.itemImageView)
-            val share = Intent(Intent.ACTION_SEND)
-            share.type = "image/*"
-            share.putExtra(Intent.EXTRA_STREAM, getImageUri(requireActivity(), image!!))
-            startActivity(Intent.createChooser(share, "Share Via:"))
-
-        }
-
+//        binding.shareToggleButton.setOnClickListener {
+//            val image:Bitmap?= getBitmapFromView(binding.itemImageView)
+//            val share= Intent(Intent.ACTION_SEND)
+//            share.type="image/*"
+//            share.putExtra(Intent.EXTRA_STREAM,getImageUri(requireActivity(),image!!))
+//            startActivity(Intent.createChooser(share, "Share Via:"))
+//
+//        }
+//
+//    }
+//       private fun getBitmapFromView(view: ImageView):Bitmap?{
+//       val bitmap= Bitmap.createBitmap(view.width,view.height,Bitmap.Config.ARGB_8888)
+//       val paint= Canvas(bitmap)
+//       view.draw(paint)
+//       return bitmap
+//
+//}
+//        private fun getImageUri(inContext: Context, inImage:Bitmap): Uri?{
+//            val byte= ByteArrayOutputStream()
+//            inImage.compress(Bitmap.CompressFormat.JPEG,100,byte)
+//            val path= MediaStore.Images.Media.insertImage(inContext.contentResolver,inImage,"Title",null)
+//            return Uri.parse(path)
+//
+//        }
+        ////////////////////////////////////////////////////
         observers()
-        binding.registerButton.setOnClickListener()
-        {
+        binding.registerButton.setOnClickListener(){
 
             observers()
-            cartViewModel.addMyCart(cart)
+            cartViewModel.addMyCart(cartItem)
             findNavController().navigate(R.id.action_itemDetilsFragment3_to_cartFragment3)
         }
-
     }
 
-    private fun getBitmapFromView(view: ImageView): Bitmap? {
-        val bitmap = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
-        val paint = Canvas(bitmap)
-        view.draw(paint)
-        return bitmap
-
-    }
-
-    private fun getImageUri(inContext: Context, inImage: Bitmap): Uri? {
-        val byte = ByteArrayOutputStream()
-        inImage.compress(Bitmap.CompressFormat.JPEG, 100, byte)
-        val path =
-            MediaStore.Images.Media.insertImage(inContext.contentResolver, inImage, "Title", null)
-        return Uri.parse(path)
-
-    }
-    ////////////////////////////////////////////////////
-
-
-
-    fun observers() {
+    fun observers(){
         itemViewModel.selectedItemMutableLiveData
-            .observe(viewLifecycleOwner, {
+            .observe(viewLifecycleOwner,{
                 cartItem = it
                 binding.CatogoryTextView.text = it.category
                 binding.TitleTextView.text = it.title
@@ -106,5 +101,4 @@ class ItemDetilsFragment : Fragment() {
             })
 
     }
-
 }
