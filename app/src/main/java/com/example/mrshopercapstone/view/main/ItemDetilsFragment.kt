@@ -37,7 +37,7 @@ class ItemDetilsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentItemDetilsBinding.inflate(layoutInflater ,container, false)
+        binding = FragmentItemDetilsBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
@@ -45,59 +45,66 @@ class ItemDetilsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         Log.d(TAG, "ID: ${itemViewModel.id}")
-         val cart = ItemModel(
-             "true",
-             "true",
-             itemViewModel.id,
-             itemViewModel.image,
-             itemViewModel.price.toDouble(),
-             itemViewModel.title
+        val cart = ItemModel(
+            "true",
+            "true",
+            itemViewModel.id,
+            itemViewModel.image,
+            itemViewModel.price.toDouble(),
+            itemViewModel.title
 
-         )
+        )
         // for the sharing the image
-//        binding.shareToggleButton.setOnClickListener {
-//            val image:Bitmap?= getBitmapFromView(binding.itemImageView)
-//            val share= Intent(Intent.ACTION_SEND)
-//            share.type="image/*"
-//            share.putExtra(Intent.EXTRA_STREAM,getImageUri(requireActivity(),image!!))
-//            startActivity(Intent.createChooser(share, "Share Via:"))
-//
-//        }
-//
-//    }
-//       private fun getBitmapFromView(view: ImageView):Bitmap?{
-//       val bitmap= Bitmap.createBitmap(view.width,view.height,Bitmap.Config.ARGB_8888)
-//       val paint= Canvas(bitmap)
-//       view.draw(paint)
-//       return bitmap
-//
-//}
-//        private fun getImageUri(inContext: Context, inImage:Bitmap): Uri?{
-//            val byte= ByteArrayOutputStream()
-//            inImage.compress(Bitmap.CompressFormat.JPEG,100,byte)
-//            val path= MediaStore.Images.Media.insertImage(inContext.contentResolver,inImage,"Title",null)
-//            return Uri.parse(path)
-//
-//        }
-        ////////////////////////////////////////////////////
-         observers()
-    binding.registerButton.setOnClickListener(){
+        binding.shareToggleButton.setOnClickListener {
+            val image: Bitmap? = getBitmapFromView(binding.itemImageView)
+            val share = Intent(Intent.ACTION_SEND)
+            share.type = "image/*"
+            share.putExtra(Intent.EXTRA_STREAM, getImageUri(requireActivity(), image!!))
+            startActivity(Intent.createChooser(share, "Share Via:"))
+
+        }
 
         observers()
-        cartViewModel.addMyCart(cartItem)
-     findNavController().navigate(R.id.action_itemDetilsFragment3_to_cartFragment3)
-    }
+        binding.registerButton.setOnClickListener()
+        {
+
+            observers()
+            cartViewModel.addMyCart(cart)
+            findNavController().navigate(R.id.action_itemDetilsFragment3_to_cartFragment3)
+        }
+
     }
 
-    fun observers(){
-         itemViewModel.selectedItemMutableLiveData
-            .observe(viewLifecycleOwner,{
+    private fun getBitmapFromView(view: ImageView): Bitmap? {
+        val bitmap = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
+        val paint = Canvas(bitmap)
+        view.draw(paint)
+        return bitmap
+
+    }
+
+    private fun getImageUri(inContext: Context, inImage: Bitmap): Uri? {
+        val byte = ByteArrayOutputStream()
+        inImage.compress(Bitmap.CompressFormat.JPEG, 100, byte)
+        val path =
+            MediaStore.Images.Media.insertImage(inContext.contentResolver, inImage, "Title", null)
+        return Uri.parse(path)
+
+    }
+    ////////////////////////////////////////////////////
+
+
+
+    fun observers() {
+        itemViewModel.selectedItemMutableLiveData
+            .observe(viewLifecycleOwner, {
                 cartItem = it
                 binding.CatogoryTextView.text = it.category
                 binding.TitleTextView.text = it.title
                 binding.descripitionTextView.text = it.description
                 Picasso.get().load(it.image).into(binding.itemImageView)
-        })
+            })
 
     }
-    }
+
+}

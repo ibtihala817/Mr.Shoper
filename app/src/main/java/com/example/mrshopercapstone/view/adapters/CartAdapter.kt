@@ -61,6 +61,10 @@ class CartAdapter(var viewModel: CartViewModel) :
 
         }
         holder.deleteToggleButton.setOnClickListener {
+//        var list = mutableListOf<CartModel>()
+//        list.addAll(differ.currentList)
+//        list.remove(item)
+//        differ.submitList(list.toList())
         viewModel.deleteMyCart(item)
         }
         }
@@ -80,7 +84,7 @@ class CartAdapter(var viewModel: CartViewModel) :
         val cartImageView: ImageView = itemView.findViewById(R.id.cartImage)
         val minusToggleButton: ImageButton = itemView.findViewById(R.id.minus_imageButton)
         val plusToggleButton: ImageButton = itemView.findViewById(R.id.plus_imageButton)
-        val qunitityTextview: TextView = itemView.findViewById(R.id.quntitycart_textView)
+//        val qunitityTextview: TextView = itemView.findViewById(R.id.quntitycart_textView)
         val deleteToggleButton: ImageButton = itemView.findViewById(R.id.delete_image_button)
     }
 }
