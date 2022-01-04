@@ -56,5 +56,6 @@
     <string name="Items">Items</string>
     <string name="WELCOME">WELCOME</string>
     <string name="WELCOMEBACK">WELCOME BACK</string>
+    <string name="one">1</string>
 
 </resources>

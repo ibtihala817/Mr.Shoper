@@ -14,8 +14,8 @@ data class CartModel(
     val image: String,
     @SerializedName("price")
     var price: Int,
-//    @SerializedName("count")
-//    var count: Int,
+    @SerializedName("count")
+    var count: Int,
 //    @SerializedName("rating")
 //    val rating: Int,
     @SerializedName("title")

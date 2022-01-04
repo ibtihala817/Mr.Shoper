@@ -52,6 +52,7 @@ class ItemDetilsFragment : Fragment() {
             itemViewModel.id,
             itemViewModel.image,
             itemViewModel.price.toDouble(),
+
             itemViewModel.title
 
         )

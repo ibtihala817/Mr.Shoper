@@ -69,7 +69,7 @@ class CartViewModel(): ViewModel() {
     fun addMyCart(myCartBody : ItemModel){
         viewModelScope.launch(Dispatchers.IO){
             try {
-                val response = apiRepo.addMyCart(CartModel(myCartBody.id.toString(),myCartBody.image,myCartBody.price.toInt(),myCartBody.title))
+                val response = apiRepo.addMyCart(CartModel(myCartBody.id.toString(),myCartBody.image,myCartBody.price.toInt(),1,myCartBody.title))
                 if (response.isSuccessful){
                     response.body()?.run {
                         Log.d(TAG,this.toString())

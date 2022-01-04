@@ -49,17 +49,28 @@ class CartAdapter(var viewModel: CartViewModel) :
         val item = differ.currentList[position]
 
         holder.titleCartTextView.text = item.title
-        holder.priceCartTextView.text = "${item.price} SAR"
+        holder.qunitityTextview.text = item.count.toString()
         Picasso.get().load(item.image).into(holder.cartImageView)
-
+        ////////////////////////////////////////////
+        var countermiun = item.count
         holder.minusToggleButton.setOnClickListener {
-
+            if (item.count >0 ){
+        holder.priceCartTextView.text = "${item.price} SAR"
+         countermiun--
+         holder.qunitityTextview.text = countermiun.toString()
         }
+            item.count = countermiun
+        viewModel.editMyCart(item)
+        }
+        //////////////////////////////////////////
+        var counter = item.count
         holder.plusToggleButton.setOnClickListener {
-
-            viewModel.editMyCart(item)
-
+        counter++
+        holder.qunitityTextview.text = counter.toString()
+        item.count = counter
+        viewModel.editMyCart(item)
         }
+        //////////////////////////////////////////////////
         holder.deleteToggleButton.setOnClickListener {
             var list = mutableListOf<CartModel>()
             list.addAll(differ.currentList)
