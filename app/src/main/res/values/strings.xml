@@ -57,5 +57,10 @@
     <string name="WELCOME">WELCOME</string>
     <string name="WELCOMEBACK">WELCOME BACK</string>
     <string name="one">1</string>
+    <string name="GoShopping">Go Shopping</string>
+    <string name="registervalue">Don’t have an account?Register</string>
+    <string name="forgetPassword">Forgot Password!</string>
+    <string name="alreadyhaveanaccountTextView">Already have an account Login!</string>
+    <string name="shop">Shop</string>
 
 </resources>

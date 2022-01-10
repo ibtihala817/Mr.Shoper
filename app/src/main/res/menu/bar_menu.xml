@@ -2,9 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/itemFragment4"
         android:icon="@drawable/product_icon"
-        android:title="@string/products"
-        android:id="@+id/itemFragment4"/>
+        android:title="@string/shop" />
     <item
         android:icon="@drawable/ic_baseline_shopping_bag_24"
         android:title="@string/item"
@@ -12,7 +12,4 @@
     <item
         android:icon="@drawable/ic_baseline_boy_24"
         android:title="@string/Account" />
-    <item
-        android:icon="@drawable/ic_baseline_list_alt_24"
-        android:title="@string/order" />
 </menu>

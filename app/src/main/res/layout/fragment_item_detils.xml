@@ -27,13 +27,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
-            <ToggleButton
-                android:id="@+id/share_toggle_button"
+            <ImageButton
+                android:id="@+id/shareImageButton"
                 android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:background="@drawable/ic_baseline_share_24"
-                android:textOff=" "
-                android:textOn=" " />
+                android:layout_height="25dp"
+                android:backgroundTint="@color/purple_200"
+                android:src="@drawable/ic_baseline_share_24" />
 
             <ImageView
                 android:id="@+id/item_imageView"

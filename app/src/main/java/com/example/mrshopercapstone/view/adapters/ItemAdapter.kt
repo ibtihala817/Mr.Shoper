@@ -1,6 +1,5 @@
 package com.example.mrshopercapstone.view.adapters
 
-import android.annotation.SuppressLint
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mrshopercapstone.models.items.ItemModel
 
@@ -63,8 +62,8 @@ class ItemAdapter(val viewModel: ItemViewModel) :
     }
 
     class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val itemNameTextView: TextView = itemView.findViewById(R.id.product_name_textview)
-        val priceTextview: TextView = itemView.findViewById(R.id.product_price_textview)
-        val itemImageView: ImageView = itemView.findViewById(R.id.product_image)
+        val itemNameTextView: TextView = itemView.findViewById(R.id.cartItemTextView)
+        val priceTextview: TextView = itemView.findViewById(R.id.qunitiy_TextView)
+        val itemImageView: ImageView = itemView.findViewById(R.id.cartImage)
     }
 }
