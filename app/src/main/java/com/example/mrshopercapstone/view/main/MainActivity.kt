@@ -1,11 +1,15 @@
 package com.example.mrshopercapstone.view.main
 
+import android.app.Activity
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.StrictMode
+import androidx.core.app.ActivityCompat
+import androidx.core.app.ActivityCompat.requestPermissions
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.navigation.NavController
@@ -16,6 +20,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.mrshopercapstone.R
 import com.example.mrshopercapstone.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.util.jar.Manifest
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -35,10 +40,15 @@ class MainActivity : AppCompatActivity() {
         sendNotification()
         setupActionBarWithNavController(navController)
         NavigationUI.setupWithNavController(binding.bottomNavigationView,navController )
+      ////////////////////////////////////////////////
+      //this is for the share
+       requestPermissions(this, arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE),0)
+        val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
+        StrictMode.setThreadPolicy(policy)
     }
-    //////////////////////////////////////////////////////
-//     if you want to back to the last fragment from where you come
-//    here just user the navigateUp methods of NavController
+    ////////////////////////////////////////////////////
+    // if you want to back to the last fragment from where you come
+    // here just user the navigateUp methods of NavController
       override fun onSupportNavigateUp(): Boolean {
           return navController.navigateUp()
       }
@@ -70,7 +80,9 @@ class MainActivity : AppCompatActivity() {
 
         with(NotificationManagerCompat.from(this)) {
             notify(notificationId, builder.build())
+
         }
     }
+
 
 }

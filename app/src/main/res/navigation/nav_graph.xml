@@ -17,7 +17,11 @@
         android:id="@+id/cartFragment3"
         android:name="com.example.mrshopercapstone.view.main.CartFragment"
         android:label="@string/MyCart"
-        tools:layout="@layout/fragment_cart" />
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/action_cartFragment3_to_itemDetilsFragment3"
+            app:destination="@id/itemDetilsFragment3" />
+    </fragment>
     <fragment
         android:id="@+id/itemDetilsFragment3"
         android:name="com.example.mrshopercapstone.view.main.ItemDetilsFragment"
@@ -26,4 +30,9 @@
             android:id="@+id/action_itemDetilsFragment3_to_cartFragment3"
             app:destination="@id/cartFragment3" />
     </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.example.mrshopercapstone.view.main.UserProfileFragment"
+        android:label="fragment_user_profile"
+        tools:layout="@layout/fragment_user_profile" />
 </navigation>

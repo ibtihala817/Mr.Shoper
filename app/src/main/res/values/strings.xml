@@ -62,5 +62,8 @@
     <string name="forgetPassword">Forgot Password!</string>
     <string name="alreadyhaveanaccountTextView">Already have an account Login!</string>
     <string name="shop">Shop</string>
+    <string name="phoneNumber">Phone Number</string>
+    <string name="Save" />
+    <string name="save">Save</string>
 
 </resources>

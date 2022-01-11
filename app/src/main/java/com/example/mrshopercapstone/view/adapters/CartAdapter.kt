@@ -11,6 +11,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.ToggleButton
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import com.example.mrshopercapstone.R
@@ -70,6 +71,10 @@ class CartAdapter(var viewModel: CartViewModel) :
         item.count = counter
         viewModel.editMyCart(item)
         }
+        holder.itemView.setOnClickListener {
+            viewModel.myCartLiveData.postValue(listOf(item))
+            holder.itemView.findNavController().navigate(R.id.action_cartFragment3_to_itemDetilsFragment3)
+        }
         //////////////////////////////////////////////////
         holder.deleteToggleButton.setOnClickListener {
             var list = mutableListOf<CartModel>()
@@ -79,8 +84,19 @@ class CartAdapter(var viewModel: CartViewModel) :
 
             viewModel.deleteMyCart(item)
         }
+
     }
 
+    // fun for swipe delete >> favorite fragment
+    fun deleteItem(index : Int){
+        val item1 = differ.currentList[index]
+        var list = mutableListOf<CartModel>()
+        list.addAll(differ.currentList)
+        list.removeAt(index)
+        differ.submitList(list.toList())
+//        notifyDataSetChanged()
+        viewModel.deleteMyCart(item1)
+    }
 
 
     override fun getItemCount(): Int {
@@ -90,6 +106,7 @@ class CartAdapter(var viewModel: CartViewModel) :
     fun sumbitList(list: List<CartModel>){
         differ.submitList(list)
     }
+
     class CartViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titleCartTextView: TextView = itemView.findViewById(R.id.cartItemTextView)
         val priceCartTextView: TextView = itemView.findViewById(R.id.qunitiy_TextView)

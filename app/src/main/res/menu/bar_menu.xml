@@ -11,5 +11,6 @@
         android:id="@+id/cartFragment3"/>
     <item
         android:icon="@drawable/ic_baseline_boy_24"
-        android:title="@string/Account" />
+        android:title="@string/Account"
+        android:id="@+id/userProfileFragment"/>
 </menu>

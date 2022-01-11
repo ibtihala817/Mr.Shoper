@@ -46,16 +46,16 @@ class ItemDetilsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         Log.d(TAG, "ID: ${itemViewModel.id}")
-        val cart = ItemModel(
-            "true",
-            "true",
-            itemViewModel.id,
-            itemViewModel.image,
-            itemViewModel.price.toDouble(),
-
-            itemViewModel.title
-
-        )
+//        val cart = ItemModel(
+//            "true",
+//            "true",
+//            itemViewModel.id,
+//            itemViewModel.image,
+//            itemViewModel.price.toDouble(),
+//
+//            itemViewModel.title
+//
+//        )
         observers()
         binding.registerButton.setOnClickListener(){
 
@@ -66,7 +66,7 @@ class ItemDetilsFragment : Fragment() {
         // for the sharing the image
         binding.shareImageButton.setOnClickListener {
             val image:Bitmap?= getBitmapFromView(binding.itemImageView)
-//            val url = Uri.parse(image.toString())
+            val url = Uri.parse(image.toString())
             val share= Intent(Intent.ACTION_SEND)
             share.type="image/*"
             share.putExtra(Intent.EXTRA_STREAM,getImageUri(requireActivity(),image!!))
@@ -89,15 +89,6 @@ class ItemDetilsFragment : Fragment() {
             return Uri.parse(path)
 
         }
-        ////////////////////////////////////////////////////
-//        observers()
-//        binding.registerButton.setOnClickListener(){
-//
-//            observers()
-//            cartViewModel.addMyCart(cartItem)
-//            findNavController().navigate(R.id.action_itemDetilsFragment3_to_cartFragment3)
-//        }
-//    }
 
     fun observers(){
         itemViewModel.selectedItemMutableLiveData
