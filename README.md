@@ -29,6 +29,9 @@ This application was built using the following technologies:
 
 ![Wireframe](<img width="3281" alt="Frame 10" src="https://user-images.githubusercontent.com/91452331/149739669-28dc0340-3af4-4921-a9aa-fcfd625daf44.png">)
 
+<img width="3281" alt="Frame 10" src="https://user-images.githubusercontent.com/91452331/149739801-97e6e181-e8a3-4caa-89cb-991d3fcb5284.png">
+
+
 link to Figma [Figma Wireframe](https://www.figma.com/file/EijD6OOHpwJd3i9X3bGNM1/NEARMe-App?node-id=4%3A273)///
 
 
