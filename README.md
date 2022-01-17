@@ -27,7 +27,7 @@ This application was built using the following technologies:
 
 ## Wireframes and User stories:
 
-![Wireframe]
+*Wireframe*
 
 <img width="3281" alt="Frame 10" src="https://user-images.githubusercontent.com/91452331/149739801-97e6e181-e8a3-4caa-89cb-991d3fcb5284.png">
 
@@ -35,26 +35,31 @@ This application was built using the following technologies:
 link to Figma [Figma Wireframe](https://www.figma.com/file/QHvjxddhgB8A2wAlkHwUO7/One-App?node-id=0%3A1)///
 
 
-- As a user,I want to see the pictures in my location so that I can see the places near me.
+- As a user,I want to see different products in the app so that I can shop from the app.
 
-- As a user, I would like to be able to choose any location on the map so that I can the picture  in that location.
+- As a user, I would like to be able to share the products so that I can send them to others to view it.
 
-- As a user I want to see the details of each image so that I can see additional information about it (such as title and date taken)  .
+- As a user I want to see the details of each image so that I can see additional information about it (such as title and price).
 
-- As a user I want to share images so that I can sent it to other people.
+- As a user I want to have profile so that I can save my information in it.
 
--As a user I want to see the recent images offline so that I can use the app without internet connection.
+- as a user I want to add the products to the cart so that I can buy them later.
+
+- as a user I want to download the picture of the products so that I can save them in my gallery.
+
+- as a user I want to delete the products so that I can add other products in the cart.
+
 -------------------------------------------------------------------------
 ## Installation:
 Follow the steps below to get started with the project's development environment:
 1. Install Android Studio from [Android Studio](https://developer.android.com/studio?gclid=Cj0KCQjw5oiMBhDtARIsAJi0qk2WOPjxp2Wij5sgO3bAK6Rp18zrs4Y0L5S6W89Fk7OClhAiVuNr1mgaAsT-EALw_wcB&gclsrc=aw.ds)
 2. Clone this repository:
  ```kotlin 
- $ git clone https://github.com/WalaaAlshaikh/NEARMe.git
+ $ git clone https://github.com/ibtihala817/One.git
  ```
 3. Navigate to the project directory:
  ```kotlin 
- $ cd NEARMe
+ $ cd One
  ```
  4. List of the depencenceies used in the project:
    * for navigation fragments
@@ -62,6 +67,12 @@ Follow the steps below to get started with the project's development environment
     dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
     implementation "androidx.navigation:navigation-ui-ktx:2.3.5"
+    }
+``` 
+   * for swipe and delete
+ ```kotlin
+    dependencies {
+   implementation 'it.xabaras.android:recyclerview-swipedecorator:1.2.3'
     }
 ``` 
 
@@ -76,8 +87,8 @@ Follow the steps below to get started with the project's development environment
    * for ViewModel
 ```kotlin
     dependencies {
-   implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0-rc01"
-   implementation "androidx.fragment:fragment-ktx:1.3.6"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0-rc01"
+    implementation "androidx.fragment:fragment-ktx:1.3.6"
     }
 ```
    * for live data
@@ -86,40 +97,35 @@ Follow the steps below to get started with the project's development environment
    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0-rc01"
    }
 ```
-   * for Room Database
+   * for Image
 ```kotlin
     dependencies { 
-   id 'kotlin-kapt'
-
-   implementation "androidx.room:room-runtime:2.3.0"
-   implementation "androidx.room:room-ktx:2.3.0"
-   kapt "androidx.room:room-compiler:2.3.0"
+    implementation 'com.squareup.picasso:picasso:2.71828'
    }
 ```
    * for coroutines
 ```kotlin
     dependencies { 
-   implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
    }
 ```
 
-* for Images
+* for Retrofit
 ```kotlin
     dependencies { 
-   implementation 'com.squareup.picasso:picasso:2.71828'
-   implementation 'com.github.bumptech.glide:glide:4.12.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
    }
 ```
 
 
-* for map
+* for firebase
 ```kotlin
     dependencies { 
-   // for current location
-    implementation 'com.google.android.gms:play-services-location:18.0.0'
-    //for enabling map
-    implementation 'com.google.android.gms:play-services-maps:18.0.0'
+    implementation 'com.google.firebase:firebase-auth:21.0.1'
+    implementation 'com.google.firebase:firebase-auth-ktx'
    }
 ```
 
@@ -128,18 +134,17 @@ Follow the steps below to get started with the project's development environment
  -----------------------------------------------------------------
  
 ## Development Process and Problem-solving Strategy:
-Firstly, Our developer team brainstormed some ideas related to the requirement of to the app and then took a general idea of the design and the mechanisim of some popular apps from app store
-Secondly, we designed a logo according to the purpose of the app and gave it name.
-Thirdly, we designed the screens each of them suitable for a specific action using the Figma and Photoshop,after that we statred programming the app using the android studio by dividing the project into several tasks that each member of the team work on it: at first, we installed the required libraries and dependencies and the required api from [FlikrApi](https://www.flickr.com/services/api/).
-For many problems that we faced,we needed first to decide the nature of the error (if it's syntax, runtime or logical), and then find the solution accordingly.Such solutions that can be disovered when debugging the error, using (Log.d)to specifty the location of the error, searching for similar cases online in [stackoverflow](https://stackoverflow.com/) and asking for the help of the experts.
+Firstly, I brainstormed some ideas related to the requirement of the app and then took a general idea of the design and the mechanisim of some popular apps from app store.
+Secondly, I designed a logo according to the purpose of the app and gave it a name.
+Thirdly, I designed the screens of each of them suitable for a specific action using the Figma, after that I statred programming the app using the android studio by dividing the project into several tasks: at first, I installed the required libraries and dependencies and the required api from [FakeApi](https://fakestoreapi.com/).
+For many problems that I faced, I need first to decided the nature of the error (if it's syntax, runtime or logical), and then find the solution accordingly.Such solutions that can be disovered when debugging the error, using (Log.d) to find the location of the error, searching for similar cases online in [stackoverflow](https://stackoverflow.com/) and asking for the help from the experts.
 ## Unsolved Problems which would be fixed in future iterations:
-* seeting the favourite image in a separate list which can potentially fixed by using a certain api from  [FlikrApi](https://www.flickr.com/services/api/) and do the authentication .
-* some bugs regarding maps such as the marker would not disappear when moving to another place .
+* using the firestore for checkout in the cart fragment.
 * some minor issues regarding the enhancment of the design to make the user expereince more dynamic.
 
 ## My favorite functions work:
 * sharing images
-it is useful when you want to send a certain image to any app.
+it is useful when you want to send a certain image to others.
 ```kotlin
 
             val image:Bitmap?= getBitmapFromView(binding.imageItem)
@@ -168,18 +173,17 @@ it is useful when you want to send a certain image to any app.
         return Uri.parse(path)
 
     }
-```            
-* using Bundle
-It is useful when you want to pass a specific data from one fragment to another.
- ```kotlin
- 
- // in first fragment
-var bundle= bundleOf("Lat" to  imageViewModel.lat,"Long" to imageViewModel.long)
-                }
-  /// in second fragment
-  if(arguments!= null)
-        {
-            imageViewModel.lat=requireArguments().getDouble("Lat")
-            imageViewModel.long= requireArguments().getDouble("Long")
+```  
+* download images
+```kotlin
+ binding.DownloadimageButton.setOnClickListener(){
+            val imageUrl = cartItem.image
+            val request = DownloadManager.Request(Uri.parse(imageUrl))
+                .setTitle("image")
+                .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_ONLY_COMPLETION)
+                .setAllowedOverMetered(true)
+
+            val manger = requireActivity().getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
+            manger.enqueue(request)
         }
-```
+
