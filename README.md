@@ -3,9 +3,6 @@
 Tuwaiq Academy Third Project.
 ONE Android Application
 ## Overview:
-![Image of app logo](https://f.top4top.io/p_2162nk8p21.jpg)
-
-
 This project represents an android application **ONE**, which helps the user display images based on their current location plus navigate to any image anywhere.
 ## Technologies used:
 This application was built using the following technologies:
