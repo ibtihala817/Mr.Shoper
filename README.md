@@ -27,7 +27,7 @@ This application was built using the following technologies:
 
 ## Wireframes and User stories:
 
-![Wireframe](https://g.top4top.io/p_2162gto4c3.png)
+![Wireframe](<img width="3281" alt="Frame 10" src="https://user-images.githubusercontent.com/91452331/149738889-7d25c016-5477-4782-877a-6ecfdeee3cb6.png">)
 
 link to Figma [Figma Wireframe](https://www.figma.com/file/EijD6OOHpwJd3i9X3bGNM1/NEARMe-App?node-id=4%3A273)///
 
