@@ -33,6 +33,10 @@
     <fragment
         android:id="@+id/userProfileFragment"
         android:name="com.example.mrshopercapstone.view.main.UserProfileFragment"
-        android:label="fragment_user_profile"
-        tools:layout="@layout/fragment_user_profile" />
+        android:label="@string/UserProfile"
+        tools:layout="@layout/fragment_user_profile">
+        <action
+            android:id="@+id/action_userProfileFragment_to_itemFragment4"
+            app:destination="@id/itemFragment4" />
+    </fragment>
 </navigation>

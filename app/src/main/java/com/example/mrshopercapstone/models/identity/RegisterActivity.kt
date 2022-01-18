@@ -1,5 +1,6 @@
 package com.example.mrshopercapstone.models.identity
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -12,10 +13,13 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.mrshopercapstone.R
 import com.example.mrshopercapstone.view.main.MainActivity
+import com.example.mrshopercapstone.view.main.STATE
+import com.example.mrshopercapstone.view.main.USER_ID
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
 class RegisterActivity : AppCompatActivity() {
+    @SuppressLint("CommitPrefEdits")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -65,7 +69,14 @@ class RegisterActivity : AppCompatActivity() {
                         if (task.isSuccessful){
                             //firebase registered user
                             val firebaseUser: FirebaseUser = task.result!!.user!!
-                            Toast.makeText(this,"User Registered Successful" , Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this,"User Registered Successful" , Toast.LENGTH_SHORT)
+                                .show()
+                            /////////////////////////////
+                            shareEditor = sharePref.edit()
+                            shareEditor.putBoolean(STATE,true)
+                            shareEditor.putString(USER_ID,FirebaseAuth.getInstance().currentUser!!.uid)
+                            shareEditor.commit()
+                           ///////////////////////////////
                             // Navigate to main activity
                             val intent = Intent(this, MainActivity::class.java)
                             intent.putExtra("UserId", firebaseUser.uid)

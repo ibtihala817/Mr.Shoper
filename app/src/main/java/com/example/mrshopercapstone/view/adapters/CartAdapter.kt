@@ -94,7 +94,6 @@ class CartAdapter(var viewModel: CartViewModel) :
         list.addAll(differ.currentList)
         list.removeAt(index)
         differ.submitList(list.toList())
-//        notifyDataSetChanged()
         viewModel.deleteMyCart(item1)
     }
 

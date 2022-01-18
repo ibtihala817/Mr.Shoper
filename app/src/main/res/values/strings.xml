@@ -65,5 +65,6 @@
     <string name="phoneNumber">Phone Number</string>
     <string name="Save" />
     <string name="save">Save</string>
+    <string name="UserProfile">User Profile</string>
 
 </resources>

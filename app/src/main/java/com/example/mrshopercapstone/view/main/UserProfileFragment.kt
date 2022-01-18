@@ -1,60 +1,94 @@
 package com.example.mrshopercapstone.view.main
 
+import android.content.ContentValues
 import android.os.Bundle
+import android.util.Log
+
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.mrshopercapstone.R
+import com.example.mrshopercapstone.databinding.FragmentUserProfileBinding
+import com.example.mrshopercapstone.models.items.UserProfile
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [UserProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+private const val TAG = "UserProfileFragment"
 class UserProfileFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private val profileUserViewModel: ProfileUserViewModel by activityViewModels()
+    private lateinit var binding: FragmentUserProfileBinding
+    private var userProfile = UserProfile()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_user_profile, container, false)
+
+        binding = FragmentUserProfileBinding.inflate(inflater, container, false)
+        return binding.root
+//        observer()
+//        Log.d(TAG,"UserProfileFragment")
+
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment UserProfileFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            UserProfileFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.EditImageButton.setOnClickListener {
+            if (binding.EditImageButton.isChecked) {
+//
+                binding.FirstNameEditText.isEnabled = true
+                binding.LastNameEditText.isEnabled = true
+                binding.EmailIdEditText.isEnabled = true
+                binding.PhoneEditText.isEnabled = true
+
+            } else {
+//                binding.deleteaccount.isVisible = false
+//                binding.profilPicture.isEnabled = false
+                binding.FirstNameEditText.isEnabled = false
+                binding.LastNameEditText.isEnabled = false
+                binding.EmailIdEditText.isEnabled = false
+                binding.PhoneEditText.isEnabled = false
+              saveEdit() // save change
             }
+//            binding.saveProfileButton.setOnClickListener {
+//            saveEdit() // save change
+////            }
+        }
+        observer()
+        profileUserViewModel.getUser()
+    }
+
+
+//            binding.logoutButton.setOnClickListener {
+//                findNavController().navigate(R.id.action_userProfileFragment_to_itemFragment4)
+//            }
+//        }
+//    }
+
+    fun saveEdit() {
+        userProfile.apply {
+            FirstName = binding.FirstNameEditText.text.toString()
+            LastName = binding.LastNameEditText.text.toString()
+            Email = binding.EmailIdEditText.text.toString()
+            PhoneNun = binding.PhoneEditText.text.toString()
+            profileUserViewModel.save(this)
+//        profileUserViewModel.getUser(userProfile = UserProfile())
+        }
+    }
+    fun observer(){
+        profileUserViewModel.getUserLiveData.observe(viewLifecycleOwner, {
+            binding.FirstNameEditText.setText(it.FirstName)
+            binding.LastNameEditText.setText(it.LastName)
+            binding.EmailIdEditText.setText(it.Email)
+            binding.PhoneEditText.setText(it.PhoneNun)
+            Log.d(ContentValues.TAG, it.toString())
+        })
+        profileUserViewModel.saveUserLiveData.observe(viewLifecycleOwner,{
+
+        })
+        profileUserViewModel.deleteUserLiveData.observe(viewLifecycleOwner,{
+
+        })
     }
 }
+

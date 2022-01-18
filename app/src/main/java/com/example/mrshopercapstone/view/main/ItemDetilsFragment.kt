@@ -1,5 +1,6 @@
 package com.example.mrshopercapstone.view.main
 
+import android.app.DownloadManager
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
@@ -63,6 +64,17 @@ class ItemDetilsFragment : Fragment() {
             cartViewModel.addMyCart(cartItem)
             findNavController().navigate(R.id.action_itemDetilsFragment3_to_cartFragment3)
         }
+        ///for downloading
+        binding.DownloadimageButton.setOnClickListener(){
+            val imageUrl = cartItem.image
+            val request = DownloadManager.Request(Uri.parse(imageUrl))
+                .setTitle("image")
+                .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_ONLY_COMPLETION)
+                .setAllowedOverMetered(true)
+
+            val manger = requireActivity().getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
+            manger.enqueue(request)
+        }
         // for the sharing the image
         binding.shareImageButton.setOnClickListener {
             val image:Bitmap?= getBitmapFromView(binding.itemImageView)
@@ -89,6 +101,8 @@ class ItemDetilsFragment : Fragment() {
             return Uri.parse(path)
 
         }
+       ///////////////////////////////////////////////////////
+
 
     fun observers(){
         itemViewModel.selectedItemMutableLiveData

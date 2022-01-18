@@ -21,66 +21,76 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <ToggleButton
+                android:id="@+id/EditImageButton"
+                android:layout_width="66dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_baseline_edit_24"
+                android:text="ToggleButton" />
+
             <ImageView
-                android:id="@+id/imageView9"
+                android:id="@+id/ProfileImageView"
                 android:layout_width="match_parent"
-                android:layout_height="261dp"
+                android:layout_height="200dp"
                 android:src="@drawable/img_2" />
 
-            <TextView
-                android:id="@+id/firstNameTextView"
+            <EditText
+                android:id="@+id/FirstNameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_margin="5dp"
                 android:background="@drawable/texteditshape"
+                android:ems="10"
                 android:hint="@string/firstname"
-                android:padding="10dp" />
-
-            <TextView
-                android:id="@+id/lastNameTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/texteditshape"
-                android:hint="@string/lastName"
-                android:padding="10dp" />
-
-            <TextView
-                android:id="@+id/emailIDTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/texteditshape"
-                android:hint="@string/email"
+                android:inputType="textPersonName"
                 android:padding="10dp" />
 
             <EditText
-                android:id="@+id/PhoneEditTextNumber"
+                android:id="@+id/LastNameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/texteditshape"
+                android:ems="10"
+                android:hint="@string/lastName"
+                android:inputType="textPersonName"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/EmailIdEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/texteditshape"
+                android:ems="10"
+                android:hint="@string/email"
+                android:inputType="textPersonName"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/PhoneEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
                 android:background="@drawable/texteditshape"
                 android:ems="10"
                 android:hint="@string/phoneNumber"
-                android:inputType="number"
+                android:inputType="textPersonName"
                 android:padding="10dp" />
-
-            <Button
-                android:id="@+id/saveProfileButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="@string/save" />
 
             <Button
                 android:id="@+id/logoutButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
+                android:padding="10dp"
                 android:text="@string/logout" />
+
+            <Button
+                android:id="@+id/EditButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Edit" />
 
         </LinearLayout>
     </ScrollView>

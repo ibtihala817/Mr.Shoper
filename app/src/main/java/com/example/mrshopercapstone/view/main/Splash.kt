@@ -9,9 +9,11 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.constraintlayout.motion.widget.MotionLayout
 import com.example.mrshopercapstone.Repository.ApiRepositoryService
+import com.example.mrshopercapstone.Repository.UserProfileRepositoryService
 import com.example.mrshopercapstone.models.identity.LoginActivity
 import com.example.mrshopercapstone.databinding.ActivitySplash2Binding
 import com.example.mrshopercapstone.models.identity.RegisterActivity
+import com.example.mrshopercapstone.models.identity.sharePref
 
 const val SHARED_PREF_FILE="login state"
 const val STATE="state"
@@ -37,11 +39,12 @@ class Splash : AppCompatActivity() {
        //////////////////////////////////////////////
         binding = ActivitySplash2Binding.inflate(layoutInflater)
         setContentView(binding.root)
-        val sharedPref = getSharedPreferences(SHARED_PREF_FILE,Context.MODE_PRIVATE)
+//        sharedPref = getSharedPreferences(SHARED_PREF_FILE,Context.MODE_PRIVATE)
+//        sharePref = getSharedPreferences(SHARED_PREF_FILE,Context.MODE_PRIVATE)
         super.onCreate(savedInstanceState)
 
         ApiRepositoryService.init(this)
-
+        UserProfileRepositoryService.init(this)
         binding.layout.setTransitionListener(object : MotionLayout.TransitionListener {
             override fun onTransitionStarted(
                 motionLayout: MotionLayout?,
@@ -61,7 +64,9 @@ class Splash : AppCompatActivity() {
             }
             // shared preferences
             override fun onTransitionCompleted(motionLayout: MotionLayout?, currentId: Int) {
-                if (sharedPref.getBoolean(STATE,false)) {
+//                sharedPref = getSharedPreferences(SHARED_PREF_FILE,Context.MODE_PRIVATE)
+                sharePref = getSharedPreferences(SHARED_PREF_FILE,Context.MODE_PRIVATE)
+                if (sharePref.getBoolean(STATE,false)) {
                     val intent = Intent(this@Splash, MainActivity::class.java)
                     startActivity(intent)
                     finish()

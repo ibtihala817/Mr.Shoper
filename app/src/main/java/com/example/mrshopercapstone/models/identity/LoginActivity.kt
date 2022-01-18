@@ -1,7 +1,9 @@
 package com.example.mrshopercapstone.models.identity
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -18,14 +20,22 @@ import com.example.mrshopercapstone.view.main.STATE
 import com.example.mrshopercapstone.view.main.USER_ID
 import com.google.firebase.auth.FirebaseAuth
 
+
+
+lateinit var sharePref: SharedPreferences
+lateinit var shareEditor: SharedPreferences.Editor
+
 class LoginActivity : AppCompatActivity() {
 
+//   lateinit var sharePref: SharedPreferences
+//   lateinit var shareEditor: SharedPreferences.Editor
 
+    @SuppressLint("CommitPrefEdits")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        val sharedPreferences = getSharedPreferences(SHARED_PREF_FILE,Context.MODE_PRIVATE)
-        val sharedPreferencesEditor = sharedPreferences.edit()
+//        val sharedPreferences = getSharedPreferences(SHARED_PREF_FILE,Context.MODE_PRIVATE)
+//        val sharedPreferencesEditor = sharedPreferences.edit()
         ////////////////////////////////////////////////////////////
         // for the top bar to gone in the login and set the fullscreen in android R
         @Suppress("DEPRECATION")
@@ -46,9 +56,9 @@ class LoginActivity : AppCompatActivity() {
         val password : EditText = findViewById(R.id.emailId_editText)
         val loginButton: Button = findViewById(R.id.register_button)
         val registerTextView: TextView = findViewById(R.id.register_textView)
-//        // display the register textview
+       // display the register textview
         registerTextView.setOnClickListener(){
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, RegisterActivity::class.java))
             finish()
         }
         // display the loginButton
@@ -63,9 +73,14 @@ class LoginActivity : AppCompatActivity() {
                         if (task.isSuccessful){
                             Toast.makeText(this,"User Logged in Successfully", Toast.LENGTH_SHORT)
                                 .show()
-                            sharedPreferencesEditor.putBoolean(STATE, true)
-                            sharedPreferencesEditor.putString(USER_ID,FirebaseAuth.getInstance().currentUser!!.uid)
-                            sharedPreferencesEditor.commit()
+//                            sharedPreferencesEditor.putBoolean(STATE, true)
+//                            sharedPreferencesEditor.putString(USER_ID,FirebaseAuth.getInstance().currentUser!!.uid)
+//                            sharedPreferencesEditor.putString("email", email)
+//                            sharedPreferencesEditor.commit()
+                            shareEditor = sharePref.edit()
+                            shareEditor.putBoolean(STATE,true)
+                            shareEditor.putString(USER_ID,FirebaseAuth.getInstance().currentUser!!.uid)
+                            shareEditor.commit()
                             //Navigate to MainActivity
                             val intent = Intent(this, MainActivity::class.java)
                             intent.putExtra("UserId", FirebaseAuth.getInstance().currentUser!!.uid)
@@ -78,6 +93,9 @@ class LoginActivity : AppCompatActivity() {
                                 .show()
                         }
                     }
+            }else{
+                Toast.makeText(this,"", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
     }
