@@ -52,8 +52,7 @@
             android:background="@drawable/texteditshape"
             android:ems="10"
             android:inputType="textPersonName"
-            android:padding="15dp"
-            android:textColorHint="#989898" />
+            android:textColorHint="#FFFFFF" />
 
         <TextView
             android:id="@+id/textView4"
@@ -72,11 +71,9 @@
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/texteditshape"
-            android:backgroundTint="@color/gray"
             android:ems="10"
             android:inputType="textPersonName"
-            android:padding="15dp"
-            android:textColorHint="#989898" />
+            android:textColorHint="@color/purple_200" />
 
         <TextView
             android:id="@+id/textView5"
@@ -97,8 +94,7 @@
             android:background="@drawable/texteditshape"
             android:ems="10"
             android:inputType="textPersonName"
-            android:padding="15dp"
-            android:textColorHint="#989898" />
+            android:textColorHint="@color/purple_200" />
 
         <TextView
             android:id="@+id/textView6"
@@ -117,8 +113,7 @@
             android:background="@drawable/texteditshape"
             android:ems="10"
             android:inputType="textPassword"
-            android:padding="15dp"
-            android:textColorHint="@color/gray" />
+            android:textColorHint="@color/purple_200" />
 
         <TextView
             android:id="@+id/textView8"
@@ -138,8 +133,8 @@
             android:background="@drawable/texteditshape"
             android:ems="10"
             android:inputType="textPassword"
-            android:padding="15dp"
-            android:textColorHint="#989898" />
+            android:paddingTop="5dp"
+            android:textColorHint="@color/purple_200" />
 
         <Button
             android:id="@+id/register_button"

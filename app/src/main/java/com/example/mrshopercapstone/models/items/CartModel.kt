@@ -16,8 +16,6 @@ data class CartModel(
     var price: Int,
     @SerializedName("count")
     var count: Int,
-//    @SerializedName("rating")
-//    val rating: Int,
     @SerializedName("title")
     val title: String
 )

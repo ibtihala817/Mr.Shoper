@@ -14,8 +14,6 @@ data class ItemModel(
     val image: String,
     @SerializedName("price")
     val price: Double,
-//    @SerializedName("rating")
-//    val rating: Rating,
     @SerializedName("title")
     val title: String
 )

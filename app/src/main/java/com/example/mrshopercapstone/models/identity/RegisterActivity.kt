@@ -15,8 +15,10 @@ import androidx.activity.viewModels
 import androidx.fragment.app.activityViewModels
 import com.example.mrshopercapstone.R
 import com.example.mrshopercapstone.models.items.UserProfile
+//import com.example.mrshopercapstone.view.ViewModel.ProfileUserViewModel
 import com.example.mrshopercapstone.view.main.MainActivity
 import com.example.mrshopercapstone.view.main.ProfileUserViewModel
+
 import com.example.mrshopercapstone.view.main.STATE
 import com.example.mrshopercapstone.view.main.USER_ID
 import com.google.firebase.auth.FirebaseAuth
@@ -63,7 +65,7 @@ class RegisterActivity : AppCompatActivity() {
             val email: String = emailAddress.text.toString()
             val passwordre: String = password.text.toString()
 
-            // this is condition for the firstname and lastname and confirmpassword and email and password
+            // this is condition for the firstname and lastname and confirm password and email and password
             if (firstname.isNotBlank() && lastname.isNotBlank() && conformpassword.isNotBlank() && email.isNotBlank() && passwordre.isNotBlank()){
 
             // to get the user info in the firebase

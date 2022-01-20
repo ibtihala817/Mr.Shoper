@@ -5,16 +5,14 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
 import com.akexorcist.localizationactivity.core.LocalizationActivityDelegate
-import com.example.mrshopercapstone.R
 import com.example.mrshopercapstone.databinding.FragmentUserProfileBinding
+//import com.example.mrshopercapstone.databinding.FragmentUserProfileBinding
 import com.example.mrshopercapstone.models.identity.LoginActivity
 import com.example.mrshopercapstone.models.identity.shareEditor
 import com.example.mrshopercapstone.models.identity.sharePref
@@ -54,14 +52,6 @@ class UserProfileFragment : Fragment() {
                 binding.PhoneEditText.isEnabled = false
               saveEdit() // save change
             }
-
-////            binding  binding.engButton.setOnClickListener{
-////                localizationDelegate.setLanguage(requireContext(),"en")
-////
-////            }
-//            binding.ar.setOnClickListener {
-//                localizationDelegate.setLanguage(requireContext(),"ar")
-//            }
         }
 
         binding.logoutButton.setOnClickListener {
@@ -86,16 +76,6 @@ class UserProfileFragment : Fragment() {
                     startActivity(intent)
                     requireActivity().finish()
                 }.show()
-
-//                FirebaseAuth.getInstance().signOut()
-//                sharePref = requireActivity().getSharedPreferences(SHARED_PREF_FILE,Context.MODE_PRIVATE)
-//                shareEditor = sharePref.edit()
-//                shareEditor.clear()
-//                shareEditor.commit()
-//                val intent = Intent(requireActivity(),LoginActivity::class.java)
-//                startActivity(intent)
-//                requireActivity().finish()
-
 
         }
         binding.EnglishradioButton.setOnClickListener {
@@ -129,12 +109,6 @@ class UserProfileFragment : Fragment() {
             binding.PhoneEditText.setText(it.PhoneNun)
             Log.d(ContentValues.TAG, it.toString())
         })
-//        profileUserViewModel.saveUserLiveData.observe(viewLifecycleOwner,{
-//
-//        })
-//        profileUserViewModel.deleteUserLiveData.observe(viewLifecycleOwner,{
-//
-//        })
     }
     ///////////////////////////
 }

@@ -17,16 +17,16 @@ import android.widget.ImageView
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.mrshopercapstone.R
+import com.example.mrshopercapstone.databinding.FragmentCartDatilsBinding
 import com.example.mrshopercapstone.databinding.FragmentItemDetilsBinding
 import com.example.mrshopercapstone.models.items.CartModel
 import com.example.mrshopercapstone.models.items.ItemModel
 import com.squareup.picasso.Picasso
 import java.io.ByteArrayOutputStream
 
-
-private const val TAG = "ItemDetilsFragment"
-class ItemDetilsFragment : Fragment() {
-    private lateinit var binding: FragmentItemDetilsBinding
+private const val TAG = "CartDatilsFragment"
+class CartDatilsFragment : Fragment() {
+    private lateinit var binding: FragmentCartDatilsBinding
     private val itemViewModel: ItemViewModel by activityViewModels()
     private val cartViewModel: CartViewModel by activityViewModels()
     lateinit var cartItem: ItemModel
@@ -36,7 +36,7 @@ class ItemDetilsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentItemDetilsBinding.inflate(layoutInflater ,container, false)
+        binding = FragmentCartDatilsBinding.inflate(layoutInflater ,container, false)
         return binding.root
     }
 
@@ -47,22 +47,18 @@ class ItemDetilsFragment : Fragment() {
         cartObserver()
         Log.d(TAG, "ID: ${itemViewModel.id}")
 
-        binding.registerButton.setOnClickListener(){
 
-            cartViewModel.addMyCart(cartItem)
-            findNavController().navigate(R.id.action_itemDetilsFragment3_to_cartFragment3)
-        }
         ///for downloading
-        binding.DownloadimageButton.setOnClickListener(){
-            val imageUrl = cartItem.image
-            val request = DownloadManager.Request(Uri.parse(imageUrl))
-                .setTitle("image")
-                .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_ONLY_COMPLETION)
-                .setAllowedOverMetered(true)
-
-            val manger = requireActivity().getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
-            manger.enqueue(request)
-        }
+//        binding.DownloadimageButton.setOnClickListener(){
+//            val imageUrl = cartItem.image
+//            val request = DownloadManager.Request(Uri.parse(imageUrl))
+//                .setTitle("image")
+//                .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_ONLY_COMPLETION)
+//                .setAllowedOverMetered(true)
+//
+//            val manger = requireActivity().getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
+//            manger.enqueue(request)
+//        }
         // for the sharing the image
         binding.shareImageButton.setOnClickListener {
             val image:Bitmap?= getBitmapFromView(binding.itemImageView)
@@ -75,21 +71,21 @@ class ItemDetilsFragment : Fragment() {
         }
 
     }
-       private fun getBitmapFromView(view: ImageView):Bitmap?{
-       val bitmap= Bitmap.createBitmap(view.width,view.height,Bitmap.Config.ARGB_8888)
-       val paint= Canvas(bitmap)
-       view.draw(paint)
-       return bitmap
+    private fun getBitmapFromView(view: ImageView):Bitmap?{
+        val bitmap= Bitmap.createBitmap(view.width,view.height,Bitmap.Config.ARGB_8888)
+        val paint= Canvas(bitmap)
+        view.draw(paint)
+        return bitmap
 
-}
-        private fun getImageUri(inContext: Context, inImage:Bitmap): Uri?{
-            val byte= ByteArrayOutputStream()
-            inImage.compress(Bitmap.CompressFormat.JPEG,100,byte)
-            val path= MediaStore.Images.Media.insertImage(inContext.contentResolver,inImage,"Title",null)
-            return Uri.parse(path)
+    }
+    private fun getImageUri(inContext: Context, inImage:Bitmap): Uri?{
+        val byte= ByteArrayOutputStream()
+        inImage.compress(Bitmap.CompressFormat.JPEG,100,byte)
+        val path= MediaStore.Images.Media.insertImage(inContext.contentResolver,inImage,"Title",null)
+        return Uri.parse(path)
 
-        }
-       ///////////////////////////////////////////////////////
+    }
+    ///////////////////////////////////////////////////////
 
 
     fun observers(){

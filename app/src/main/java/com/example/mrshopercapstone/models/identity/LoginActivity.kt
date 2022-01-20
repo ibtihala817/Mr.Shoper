@@ -21,21 +21,16 @@ import com.example.mrshopercapstone.view.main.USER_ID
 import com.google.firebase.auth.FirebaseAuth
 
 
-
+// this is shared preference global latent variables for declaration
 lateinit var sharePref: SharedPreferences
 lateinit var shareEditor: SharedPreferences.Editor
 
 class LoginActivity : AppCompatActivity() {
 
-//   lateinit var sharePref: SharedPreferences
-//   lateinit var shareEditor: SharedPreferences.Editor
-
     @SuppressLint("CommitPrefEdits")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-//        val sharedPreferences = getSharedPreferences(SHARED_PREF_FILE,Context.MODE_PRIVATE)
-//        val sharedPreferencesEditor = sharedPreferences.edit()
         ////////////////////////////////////////////////////////////
         // for the top bar to gone in the login and set the fullscreen in android R
         @Suppress("DEPRECATION")
@@ -73,15 +68,11 @@ class LoginActivity : AppCompatActivity() {
                         if (task.isSuccessful){
                             Toast.makeText(this,"User Logged in Successfully", Toast.LENGTH_SHORT)
                                 .show()
-//                            sharedPreferencesEditor.putBoolean(STATE, true)
-//                            sharedPreferencesEditor.putString(USER_ID,FirebaseAuth.getInstance().currentUser!!.uid)
-//                            sharedPreferencesEditor.putString("email", email)
-//                            sharedPreferencesEditor.commit()
                             shareEditor = sharePref.edit()
                             shareEditor.putBoolean(STATE,true)
                             shareEditor.putString(USER_ID,FirebaseAuth.getInstance().currentUser!!.uid)
                             shareEditor.commit()
-                            //Navigate to MainActivity
+
                             val intent = Intent(this, MainActivity::class.java)
                             intent.putExtra("UserId", FirebaseAuth.getInstance().currentUser!!.uid)
                             intent.putExtra("Email", FirebaseAuth.getInstance().currentUser!!.email)

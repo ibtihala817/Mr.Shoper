@@ -3,14 +3,10 @@ package com.example.mrshopercapstone.view.main
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
-import com.example.mrshopercapstone.R
 import com.example.mrshopercapstone.databinding.FragmentItemBinding
-
 import com.example.mrshopercapstone.models.items.ItemModel
 import com.example.mrshopercapstone.view.adapters.ItemAdapter
 

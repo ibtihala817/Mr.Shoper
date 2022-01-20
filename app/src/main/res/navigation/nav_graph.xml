@@ -19,8 +19,8 @@
         android:label="@string/MyCart"
         tools:layout="@layout/fragment_cart" >
         <action
-            android:id="@+id/action_cartFragment3_to_itemDetilsFragment3"
-            app:destination="@id/itemDetilsFragment3" />
+            android:id="@+id/action_cartFragment3_to_cartDatilsFragment"
+            app:destination="@id/cartDatilsFragment" />
     </fragment>
     <fragment
         android:id="@+id/itemDetilsFragment3"
@@ -39,4 +39,8 @@
             android:id="@+id/action_userProfileFragment_to_itemFragment4"
             app:destination="@id/itemFragment4" />
     </fragment>
+    <fragment
+        android:id="@+id/cartDatilsFragment"
+        android:name="com.example.mrshopercapstone.view.main.CartDatilsFragment"
+        android:label="CartDatilsFragment" />
 </navigation>

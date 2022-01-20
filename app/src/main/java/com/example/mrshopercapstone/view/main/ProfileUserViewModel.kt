@@ -61,7 +61,7 @@ class ProfileUserViewModel: ViewModel() {
                     Log.d("Firebase", "document saved")
                 }.addOnFailureListener {
                     userErrorLiveData.postValue("")
-//                    Log.d("Firebase", it.message.toString())
+
                 }
             } catch (e: Exception) {
                 Log.d(TAG, e.message.toString())

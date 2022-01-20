@@ -1,7 +1,7 @@
 package com.example.mrshopercapstone.view.adaptersimport
 
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mrshopercapstone.view.main.CartViewModel
+
 
 
 import android.view.LayoutInflater
@@ -10,12 +10,12 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.ToggleButton
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import com.example.mrshopercapstone.R
 import com.example.mrshopercapstone.models.items.CartModel
+import com.example.mrshopercapstone.view.main.CartViewModel
 import com.squareup.picasso.Picasso
 
 
@@ -73,17 +73,9 @@ class CartAdapter(var viewModel: CartViewModel) :
         }
         holder.itemView.setOnClickListener {
             viewModel.selcetedItemMutableLiveData.postValue(item)
-            holder.itemView.findNavController().navigate(R.id.action_cartFragment3_to_itemDetilsFragment3)
+            holder.itemView.findNavController().navigate(R.id.action_cartFragment3_to_cartDatilsFragment)
         }
         //////////////////////////////////////////////////
-//        holder.deleteToggleButton.setOnClickListener {
-//            var list = mutableListOf<CartModel>()
-//            list.addAll(differ.currentList)
-//            list.remove(item)
-//            differ.submitList(list.toList())
-//
-//            viewModel.deleteMyCart(item)
-//        }
 
     }
 
@@ -113,6 +105,6 @@ class CartAdapter(var viewModel: CartViewModel) :
         val minusToggleButton: ImageButton = itemView.findViewById(R.id.minus_imageButton)
         val plusToggleButton: ImageButton = itemView.findViewById(R.id.plus_imageButton)
         val qunitityTextview: TextView = itemView.findViewById(R.id.quntitycart_textView)
-//        val deleteToggleButton: ImageButton = itemView.findViewById(R.id.delete_image_button)
+
     }
 }

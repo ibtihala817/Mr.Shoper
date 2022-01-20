@@ -41,13 +41,6 @@
                 android:layout_height="wrap_content"
                 tools:src="@tools:sample/avatars" />
 
-            <ImageButton
-                android:id="@+id/DownloadimageButton"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="#CCCCCC"
-                android:src="@drawable/ic_baseline_download_24" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -76,17 +69,6 @@
                     android:background="#CCCCCC"
                     android:padding="10dp"
                     android:text="@string/Descripition" />
-
-                <Button
-                    android:id="@+id/register_button"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    android:backgroundTint="@color/pinkish"
-                    android:padding="10dp"
-                    android:text="@string/ADDROCART"
-                    android:textSize="20sp"
-                    app:cornerRadius="300dp" />
 
             </LinearLayout>
 

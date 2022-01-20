@@ -5,14 +5,14 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray"
+    android:background="@color/purple_200"
     tools:context=".view.main.ItemFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/item_recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/gray"
+        android:background="@color/purple_200"
         android:backgroundTint="#CCCCCC"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -8,10 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mrshopercapstone.R
 import com.example.mrshopercapstone.Util.SwipeToDelete
 import com.example.mrshopercapstone.databinding.FragmentCartBinding
-import com.example.mrshopercapstone.models.items.CartModel
 import com.example.mrshopercapstone.view.adaptersimport.CartAdapter
 class CartFragment : Fragment() {
 
@@ -36,13 +34,13 @@ class CartFragment : Fragment() {
         binding.cartRecyclerView.adapter = cartAdapter
         cartViewModel.callMyCart()
 
-//        cartAdapter = CartAdapter(cartViewModel)
+
 
         // for swipe delete
         val swipeDelete = object : SwipeToDelete(this.requireContext()){
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 cartAdapter.deleteItem(viewHolder.adapterPosition)
-//                CartAdapter.deleteItem(viewHolder.adapterPosition)
+
             }
         }
         val touchHelper = ItemTouchHelper(swipeDelete)

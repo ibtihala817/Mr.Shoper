@@ -39,8 +39,6 @@ class Splash : AppCompatActivity() {
        //////////////////////////////////////////////
         binding = ActivitySplash2Binding.inflate(layoutInflater)
         setContentView(binding.root)
-//        sharedPref = getSharedPreferences(SHARED_PREF_FILE,Context.MODE_PRIVATE)
-//        sharePref = getSharedPreferences(SHARED_PREF_FILE,Context.MODE_PRIVATE)
         super.onCreate(savedInstanceState)
 
         ApiRepositoryService.init(this)
@@ -64,7 +62,6 @@ class Splash : AppCompatActivity() {
             }
             // shared preferences
             override fun onTransitionCompleted(motionLayout: MotionLayout?, currentId: Int) {
-//                sharedPref = getSharedPreferences(SHARED_PREF_FILE,Context.MODE_PRIVATE)
                 sharePref = getSharedPreferences(SHARED_PREF_FILE,Context.MODE_PRIVATE)
                 if (sharePref.getBoolean(STATE,false)) {
                     val intent = Intent(this@Splash, MainActivity::class.java)

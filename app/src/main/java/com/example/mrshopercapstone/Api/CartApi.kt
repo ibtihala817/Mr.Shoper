@@ -5,6 +5,7 @@ import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.*
 
+// this is the functions that I use for geting the Api in the app
 interface CartApi {
     @GET("/ItemModel5")
     suspend fun getMyCart(

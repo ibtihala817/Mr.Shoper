@@ -27,6 +27,7 @@
                 android:layout_width="35dp"
                 android:layout_height="50dp"
                 android:background="@drawable/ic_baseline_edit_24"
+                android:backgroundTint="@color/gray"
                 android:text="ToggleButton"
                 android:textColor="@color/pinkish"
                 android:textOff="      "
@@ -93,13 +94,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Arabic" />
+                    android:text="Arabic"
+                    android:textColor="@color/black" />
 
                 <RadioButton
                     android:id="@+id/EnglishradioButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="English" />
+                    android:text="English"
+                    android:textColor="@color/black" />
             </RadioGroup>
 
             <Button

@@ -1,7 +1,6 @@
 package com.example.mrshopercapstone.view.main
 
 import android.util.Log
-import androidx.core.text.isDigitsOnly
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
