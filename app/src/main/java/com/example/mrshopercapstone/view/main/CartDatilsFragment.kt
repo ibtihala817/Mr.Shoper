@@ -47,18 +47,6 @@ class CartDatilsFragment : Fragment() {
         cartObserver()
         Log.d(TAG, "ID: ${itemViewModel.id}")
 
-
-        ///for downloading
-//        binding.DownloadimageButton.setOnClickListener(){
-//            val imageUrl = cartItem.image
-//            val request = DownloadManager.Request(Uri.parse(imageUrl))
-//                .setTitle("image")
-//                .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_ONLY_COMPLETION)
-//                .setAllowedOverMetered(true)
-//
-//            val manger = requireActivity().getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
-//            manger.enqueue(request)
-//        }
         // for the sharing the image
         binding.shareImageButton.setOnClickListener {
             val image:Bitmap?= getBitmapFromView(binding.itemImageView)
