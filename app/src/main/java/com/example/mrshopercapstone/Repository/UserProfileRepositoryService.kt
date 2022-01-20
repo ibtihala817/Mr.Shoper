@@ -13,9 +13,8 @@ class UserProfileRepositoryService(val context: Context) {
     private var UserReference =  Firebase.firestore.collection("UserProfile")
 
     fun saveProfile(userProfile: UserProfile)= UserReference.document(FirebaseAuth.getInstance().uid.toString()).set(userProfile)
-//    fun deleteProfile() = UserReference.document(FirebaseAuth.getInstance().uid.toString()).delete()
     fun getUser()= UserReference.document(FirebaseAuth.getInstance().uid.toString()).get()
-
+       //////////////////////////////////////////
     companion object {
         private var instance: UserProfileRepositoryService? = null
 
@@ -23,11 +22,12 @@ class UserProfileRepositoryService(val context: Context) {
             if (instance == null)
                 instance = UserProfileRepositoryService(context)
         }
-
+        ////////////////////////////////////////////
         fun get(): UserProfileRepositoryService {
             return instance ?: throw Exception("UserProfileRepositoryService must be initialized")
         }
+        ////////////////////////////////////////////
 
     }
-
+    //////////////////////////////////////////////
 }

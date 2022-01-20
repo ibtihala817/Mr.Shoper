@@ -72,18 +72,18 @@ class CartAdapter(var viewModel: CartViewModel) :
         viewModel.editMyCart(item)
         }
         holder.itemView.setOnClickListener {
-            viewModel.myCartLiveData.postValue(listOf(item))
+            viewModel.selcetedItemMutableLiveData.postValue(item)
             holder.itemView.findNavController().navigate(R.id.action_cartFragment3_to_itemDetilsFragment3)
         }
         //////////////////////////////////////////////////
-        holder.deleteToggleButton.setOnClickListener {
-            var list = mutableListOf<CartModel>()
-            list.addAll(differ.currentList)
-            list.remove(item)
-            differ.submitList(list.toList())
-
-            viewModel.deleteMyCart(item)
-        }
+//        holder.deleteToggleButton.setOnClickListener {
+//            var list = mutableListOf<CartModel>()
+//            list.addAll(differ.currentList)
+//            list.remove(item)
+//            differ.submitList(list.toList())
+//
+//            viewModel.deleteMyCart(item)
+//        }
 
     }
 
@@ -113,6 +113,6 @@ class CartAdapter(var viewModel: CartViewModel) :
         val minusToggleButton: ImageButton = itemView.findViewById(R.id.minus_imageButton)
         val plusToggleButton: ImageButton = itemView.findViewById(R.id.plus_imageButton)
         val qunitityTextview: TextView = itemView.findViewById(R.id.quntitycart_textView)
-        val deleteToggleButton: ImageButton = itemView.findViewById(R.id.delete_image_button)
+//        val deleteToggleButton: ImageButton = itemView.findViewById(R.id.delete_image_button)
     }
 }

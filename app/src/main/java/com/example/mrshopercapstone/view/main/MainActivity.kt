@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
+import android.content.res.Resources
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,12 +18,22 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.akexorcist.localizationactivity.core.LocalizationActivityDelegate
+import com.akexorcist.localizationactivity.core.LocalizationUtility
+import com.akexorcist.localizationactivity.core.OnLocaleChangedListener
 import com.example.mrshopercapstone.R
 import com.example.mrshopercapstone.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.util.*
 import java.util.jar.Manifest
 
-class MainActivity : AppCompatActivity() {
+private const val TAG = "MainActivity"
+class MainActivity : AppCompatActivity(), OnLocaleChangedListener {
+
+    private val localizationDelegate = LocalizationActivityDelegate(this)
+
+
+
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
     private val CHANNEL_ID = "channel_id_example_01"
@@ -30,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val navHostFragment =
@@ -40,7 +51,10 @@ class MainActivity : AppCompatActivity() {
         sendNotification()
         setupActionBarWithNavController(navController)
         NavigationUI.setupWithNavController(binding.bottomNavigationView,navController )
-      ////////////////////////////////////////////////
+       ///// gor language
+        localizationDelegate.addOnLocaleChangedListener(this)
+        localizationDelegate.onCreate()
+       ////////////
       //this is for the share
        requestPermissions(this, arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE),0)
         val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
@@ -84,5 +98,42 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onAfterLocaleChanged() {
+
+    }
+
+    override fun onBeforeLocaleChanged() {
+
+    }
+    public override fun onResume() {
+        super.onResume()
+        localizationDelegate.onResume(this)
+    }
+
+    override fun attachBaseContext(newBase: Context) {
+        applyOverrideConfiguration(localizationDelegate.updateConfigurationLocale(newBase))
+        super.attachBaseContext(newBase)
+    }
+
+    override fun getApplicationContext(): Context {
+        return localizationDelegate.getApplicationContext(super.getApplicationContext())
+    }
+
+    override fun getResources(): Resources {
+        return localizationDelegate.getResources(super.getResources())
+    }
+
+    fun setLanguage(language: String?) {
+        localizationDelegate.setLanguage(this, language!!)
+    }
+
+    fun setLanguage(locale: Locale?) {
+        localizationDelegate.setLanguage(this, locale!!)
+
+    }
+
+    val currentLanguage: Locale
+        get() = localizationDelegate.getLanguage(this)
 
 }
+

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mr.ShoperCapstone</string>
+    <string name="email">الايميل الشخصي</string>
+    <string name="login" translatable="false">تسجيل الدخول</string>
+    <string name="password" translatable="false">كلمة المرور</string>
+    <string name="haveanaccount">لا يوجد لديك حساب؟ تسجيل</string>
+    <string name="greatAnAccount" translatable="false">أنشأ حساب؟</string>
+    <string name="greatanAccount">أنشأ حساب؟</string>
+    <string name="firstname" translatable="false">"الاسم الأول "</string>
+    <string name="lastName" translatable="false">"الاسم الأخير"</string>
+    <string name="confirmpassword" translatable="false">تأكيد كلمة المرور</string>
+    <string name="registerbutton" translatable="false">" تسجيل"</string>
+    <string name="massage" translatable="false">" يوجد لديك حساب؟ تسجيل الدخول"</string>
+    <string name="GreatAnAccount">أنشأ حساب؟</string>
+    <string name="logout" translatable="false">" تسجيل خروج"</string>
+    <string name="itemprice" translatable="false">" سعر المنتج"</string>
+    <string name="itemName">"اسم المنتج "</string>
+    <string name="ProductDetails">" تفاصيل المنتج"</string>
+    <string name="phoneNumber" translatable="false">رقم الجوال</string>
+    <string name="Descripition">وصف المنتج</string>
+    <string name="Title">"عنوان المنتج"</string>
+    <string name="PriceItem">" سعر المنتج"</string>
+    <string name="ADDROCART" translatable="false">الاضافة الى السلة</string>
+    <string name="Cart" translatable="false">" السلة"</string>
+    </resources>

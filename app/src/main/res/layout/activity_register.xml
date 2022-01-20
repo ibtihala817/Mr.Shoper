@@ -15,6 +15,7 @@
         android:background="@color/pink"
         android:orientation="vertical"
         android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,11 +24,10 @@
         android:id="@+id/linearLayout3"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#fffaf9"
+        android:background="#CCCCCC"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.0">
@@ -37,6 +37,7 @@
             android:layout_width="138dp"
             android:layout_height="23dp"
             android:layout_marginLeft="2dp"
+            android:layout_marginTop="5dp"
             android:text="@string/firstname"
             android:textColor="@color/gray"
             android:textSize="16sp" />
@@ -51,7 +52,7 @@
             android:background="@drawable/texteditshape"
             android:ems="10"
             android:inputType="textPersonName"
-            android:padding="10dp"
+            android:padding="15dp"
             android:textColorHint="#989898" />
 
         <TextView
@@ -74,7 +75,7 @@
             android:backgroundTint="@color/gray"
             android:ems="10"
             android:inputType="textPersonName"
-            android:padding="10dp"
+            android:padding="15dp"
             android:textColorHint="#989898" />
 
         <TextView
@@ -96,7 +97,7 @@
             android:background="@drawable/texteditshape"
             android:ems="10"
             android:inputType="textPersonName"
-            android:padding="10dp"
+            android:padding="15dp"
             android:textColorHint="#989898" />
 
         <TextView
@@ -116,7 +117,7 @@
             android:background="@drawable/texteditshape"
             android:ems="10"
             android:inputType="textPassword"
-            android:padding="10dp"
+            android:padding="15dp"
             android:textColorHint="@color/gray" />
 
         <TextView
@@ -137,7 +138,7 @@
             android:background="@drawable/texteditshape"
             android:ems="10"
             android:inputType="textPassword"
-            android:padding="10dp"
+            android:padding="15dp"
             android:textColorHint="#989898" />
 
         <Button

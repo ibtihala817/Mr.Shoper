@@ -9,12 +9,12 @@
 
     <style name="AppTheme">Apptheme</style>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="noitemfound">noItemFoundTextView</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="noitemfound" translatable="false">noItemFoundTextView</string>
     <string name="login">LOGIN</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="ForgetPassword">Forget Password?</string>
+    <string name="ForgetPassword" translatable="false">Forget Password?</string>
     <string name="haveanaccount">Don\'t have an account? Register</string>
     <string name="greatAnAccount">GreatAnAccount</string>
     <string name="greatanAccount">Great An Account</string>
@@ -23,48 +23,52 @@
     <string name="confirmpassword">Confirm Password</string>
     <string name="registerbutton">REGISTER</string>
     <string name="massage">already have an account! login</string>
-    <string name="dashBoard">DashBoard</string>
-    <string name="products">Products</string>
-    <string name="cart">Carts</string>
-    <string name="noitemsfound">No Items Found!</string>
+    <string name="dashBoard" translatable="false">DashBoard</string>
+    <string name="products" translatable="false">Products</string>
+    <string name="cart" translatable="false">Carts</string>
+    <string name="noitemsfound" translatable="false">No Items Found!</string>
     <string name="itemName">Item Name</string>
     <string name="itemprice">Item Price</string>
     <string name="logout">LOGOUT</string>
     <string name="GreatAnAccount">Create An Account</string>
-    <string name="Order">order</string>
-    <string name="order">Order</string>
+    <string name="Order" translatable="false">order</string>
+    <string name="order" translatable="false">Order</string>
     <string name="Cart">cart</string>
-    <string name="item">Cart</string>
-    <string name="Account">Account</string>
+    <string name="item" translatable="false">Cart</string>
+    <string name="Account" translatable="false">Account</string>
     <string name="ProductDetails">Product Details</string>
     <string name="PriceItem">Price</string>
-    <string name="ItemTitle" />
+    <string name="ItemTitle" translatable="false" />
     <string name="ADDROCART">ADD TO CART</string>
-    <string name="CartItemTitle">Cart Item Title</string>
-    <string name="ProductCart">Product Cart</string>
-    <string name="NoItemFound">No Item Found</string>
-    <string name="subtotal">Subtotal</string>
-    <string name="ShippingCharge">Shipping Charge</string>
-    <string name="TotallAmount">Total Amount</string>
-    <string name="checkout">Checkout</string>
-    <string name="Catogory">Catogory</string>
+    <string name="CartItemTitle" translatable="false">Cart Item Title</string>
+    <string name="ProductCart" translatable="false">Product Cart</string>
+    <string name="NoItemFound" translatable="false">No Item Found</string>
+    <string name="subtotal" translatable="false">Subtotal</string>
+    <string name="ShippingCharge" translatable="false">Shipping Charge</string>
+    <string name="TotallAmount" translatable="false">Total Amount</string>
+    <string name="checkout" translatable="false">Checkout</string>
+    <string name="Catogory" translatable="false">Catogory</string>
     <string name="Title">Title</string>
     <string name="Descripition">Descripition</string>
-    <string name="Count">Count</string>
-    <string name="ItemDetails">Item Details</string>
-    <string name="MyCart">My Cart</string>
-    <string name="Items">Items</string>
-    <string name="WELCOME">WELCOME</string>
-    <string name="WELCOMEBACK">WELCOME BACK</string>
-    <string name="one">1</string>
-    <string name="GoShopping">Go Shopping</string>
-    <string name="registervalue">Don’t have an account?Register</string>
-    <string name="forgetPassword">Forgot Password!</string>
-    <string name="alreadyhaveanaccountTextView">Already have an account Login!</string>
-    <string name="shop">Shop</string>
+    <string name="Count" translatable="false">Count</string>
+    <string name="ItemDetails" translatable="false">Item Details</string>
+    <string name="MyCart" translatable="false">My Cart</string>
+    <string name="Items" translatable="false">Items</string>
+    <string name="WELCOME" translatable="false">WELCOME</string>
+    <string name="WELCOMEBACK" translatable="false">WELCOME BACK</string>
+    <string name="one" translatable="false">1</string>
+    <string name="GoShopping" translatable="false">Go Shopping</string>
+    <string name="registervalue" translatable="false">Don’t have an account?Register</string>
+    <string name="forgetPassword" translatable="false">Forgot Password!</string>
+    <string name="alreadyhaveanaccountTextView" translatable="false">Already have an account Login!</string>
+    <string name="shop" translatable="false">Shop</string>
     <string name="phoneNumber">Phone Number</string>
-    <string name="Save" />
-    <string name="save">Save</string>
-    <string name="UserProfile">User Profile</string>
+    <string name="Save" translatable="false" />
+    <string name="save" translatable="false">Save</string>
+    <string name="UserProfile" translatable="false">User Profile</string>
+    <string name="edit1" translatable="false">Edit</string>
+    <string name="noEdit" translatable="false">NoEdit</string>
+    <string name="edit" translatable="false">Edit</string>
+    <string name="let_s_edit" translatable="false">let\'s Edit</string>
 
 </resources>

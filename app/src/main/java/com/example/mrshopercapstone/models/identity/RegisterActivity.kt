@@ -11,14 +11,20 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.viewModels
+import androidx.fragment.app.activityViewModels
 import com.example.mrshopercapstone.R
+import com.example.mrshopercapstone.models.items.UserProfile
 import com.example.mrshopercapstone.view.main.MainActivity
+import com.example.mrshopercapstone.view.main.ProfileUserViewModel
 import com.example.mrshopercapstone.view.main.STATE
 import com.example.mrshopercapstone.view.main.USER_ID
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
 class RegisterActivity : AppCompatActivity() {
+    val userinfo = UserProfile()
+    private val profileUserViewModel: ProfileUserViewModel by viewModels()
     @SuppressLint("CommitPrefEdits")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,6 +75,14 @@ class RegisterActivity : AppCompatActivity() {
                         if (task.isSuccessful){
                             //firebase registered user
                             val firebaseUser: FirebaseUser = task.result!!.user!!
+                            ///// save the register data to the logout
+                            userinfo.apply {
+                                FirstName = firstname
+                                LastName = lastname
+                                Email = email
+                                profileUserViewModel.save(userinfo)
+                            }
+
                             Toast.makeText(this,"User Registered Successful" , Toast.LENGTH_SHORT)
                                 .show()
                             /////////////////////////////

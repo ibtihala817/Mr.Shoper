@@ -34,6 +34,7 @@ class ItemDetilsFragment : Fragment() {
     private val itemViewModel: ItemViewModel by activityViewModels()
     private val cartViewModel: CartViewModel by activityViewModels()
     lateinit var cartItem: ItemModel
+    lateinit var cartDatilsItem : CartModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,6 +47,8 @@ class ItemDetilsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        observers()
+        cartObserver()
         Log.d(TAG, "ID: ${itemViewModel.id}")
 //        val cart = ItemModel(
 //            "true",
@@ -57,10 +60,12 @@ class ItemDetilsFragment : Fragment() {
 //            itemViewModel.title
 //
 //        )
-        observers()
+//        observers()
+//        cartObserver()
+////        observers()
         binding.registerButton.setOnClickListener(){
-
-            observers()
+//            cartObserver()
+//            observers()
             cartViewModel.addMyCart(cartItem)
             findNavController().navigate(R.id.action_itemDetilsFragment3_to_cartFragment3)
         }
@@ -107,12 +112,36 @@ class ItemDetilsFragment : Fragment() {
     fun observers(){
         itemViewModel.selectedItemMutableLiveData
             .observe(viewLifecycleOwner,{
-                cartItem = it
-                binding.CatogoryTextView.text = it.category
-                binding.TitleTextView.text = it.title
-                binding.descripitionTextView.text = it.description
-                Picasso.get().load(it.image).into(binding.itemImageView)
+                it?.let {
+                    cartItem = it
+                    binding.CatogoryTextView.text = it.category
+                    binding.TitleTextView.text = it.title
+                    binding.descripitionTextView.text = it.description
+                    Picasso.get().load(it.image).into(binding.itemImageView)
+                    itemViewModel.selectedItemMutableLiveData.postValue(null)
+
+                }
+//                cartItem = it
+//                binding.CatogoryTextView.text = it.category
+//                binding.TitleTextView.text = it.title
+//                binding.descripitionTextView.text = it.description
+//                Picasso.get().load(it.image).into(binding.itemImageView)
             })
 
+    }
+    fun cartObserver(){
+        cartViewModel.selcetedItemMutableLiveData.observe(
+            viewLifecycleOwner,{
+                it?.let {
+                    cartDatilsItem = it
+                    binding.CatogoryTextView.text = it.category
+                    binding.TitleTextView.text = it.title
+                    binding.descripitionTextView.text = it.description
+                    Picasso.get().load(it.image).into(binding.itemImageView)
+                    cartViewModel.selcetedItemMutableLiveData.postValue(null)
+
+                }
+            }
+        )
     }
 }

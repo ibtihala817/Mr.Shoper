@@ -11,6 +11,7 @@
         android:id="@+id/scrollView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#CCCCCC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,22 +24,25 @@
 
             <ToggleButton
                 android:id="@+id/EditImageButton"
-                android:layout_width="66dp"
-                android:layout_height="wrap_content"
+                android:layout_width="35dp"
+                android:layout_height="50dp"
                 android:background="@drawable/ic_baseline_edit_24"
-                android:text="ToggleButton" />
+                android:text="ToggleButton"
+                android:textColor="@color/pinkish"
+                android:textOff="      "
+                android:textOn="       " />
 
             <ImageView
                 android:id="@+id/ProfileImageView"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="150dp"
                 android:src="@drawable/img_2" />
 
             <EditText
                 android:id="@+id/FirstNameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:background="@drawable/texteditshape"
                 android:ems="10"
                 android:hint="@string/firstname"
@@ -49,7 +53,7 @@
                 android:id="@+id/LastNameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:background="@drawable/texteditshape"
                 android:ems="10"
                 android:hint="@string/lastName"
@@ -60,7 +64,7 @@
                 android:id="@+id/EmailIdEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:background="@drawable/texteditshape"
                 android:ems="10"
                 android:hint="@string/email"
@@ -71,26 +75,40 @@
                 android:id="@+id/PhoneEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:background="@drawable/texteditshape"
                 android:ems="10"
                 android:hint="@string/phoneNumber"
                 android:inputType="textPersonName"
                 android:padding="10dp" />
 
+            <RadioGroup
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <RadioButton
+                    android:id="@+id/ArabicRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Arabic" />
+
+                <RadioButton
+                    android:id="@+id/EnglishradioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="English" />
+            </RadioGroup>
+
             <Button
                 android:id="@+id/logoutButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:padding="10dp"
                 android:text="@string/logout" />
-
-            <Button
-                android:id="@+id/EditButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Edit" />
 
         </LinearLayout>
     </ScrollView>

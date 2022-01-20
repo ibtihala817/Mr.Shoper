@@ -18,7 +18,7 @@ class ProfileUserViewModel: ViewModel() {
     val getUserLiveData = MutableLiveData<UserProfile>()
     val deleteUserLiveData = MutableLiveData<String>()
     val userErrorLiveData = MutableLiveData<String>()
-//    val getListLiveData = MutableLiveData<List<UserProfile>>()
+
 
     private val apiRepo = UserProfileRepositoryService.get()
     private var firestore: FirebaseFirestore
@@ -30,7 +30,7 @@ class ProfileUserViewModel: ViewModel() {
     }
 
     /////////////////////////////////////////////////////
-    ////for saveing user data////
+    ////for saving user data////
     fun save(userProfile: UserProfile){
         viewModelScope.launch(Dispatchers.IO){
             try {
@@ -41,7 +41,7 @@ class ProfileUserViewModel: ViewModel() {
                  userErrorLiveData.postValue("")
                  Log.d(TAG, it.message.toString())
 
-                 // Log.d("Firebase", it.message.toString())
+
              }
 
             } catch (e: Exception) {
@@ -51,26 +51,7 @@ class ProfileUserViewModel: ViewModel() {
         }
     }
 
-    /////////////////////////////////////////////////////////////////
-//    fun deleteProfile(){
-//      viewModelScope.launch(Dispatchers.IO){
-//          try {
-//              apiRepo.deleteProfile().addOnSuccessListener{
-//                  deleteUserLiveData.postValue("")
-//                  Log.d("Firebase", "Document saved")
-//
-//              }.addOnFailureListener {
-//                  userErrorLiveData.postValue("")
-//                //  Log.d("Firebase", it.message.toString())
-//              }
-//
-//          } catch (e: Exception) {
-//              Log.d(ContentValues.TAG, e.message.toString())
-//              userErrorLiveData.postValue(e.message.toString())
-//          }
-//      }
-//    }
-    /////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////
     fun getUser() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
@@ -88,4 +69,5 @@ class ProfileUserViewModel: ViewModel() {
             }
         }
     }
+    /////////////////////////////////////////////////////////
 }

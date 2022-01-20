@@ -74,4 +74,8 @@ dependencies {
 
     // for swipe and delete
     implementation 'it.xabaras.android:recyclerview-swipedecorator:1.2.3'
+    //for language
+    implementation 'com.akexorcist:localization:1.2.11'
+    /////
+    implementation 'com.google.code.gson:gson:2.8.8'
 }
