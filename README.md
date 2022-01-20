@@ -2,7 +2,8 @@
 # Capstone 3
 Tuwaiq Academy Third Project.
 ONE Android Application
-## Overview:
+## LOGO and Overview:
+![Blue Online Store Mobile App Instagram Story (2)](https://user-images.githubusercontent.com/91452331/150318766-502c23dc-7b9a-4fe9-b938-bd8fd9369fd5.png)
 This project represents an android application **ONE**, which helps the user display and shop different items. 
 ## Technologies used:
 This application was built using the following technologies:
