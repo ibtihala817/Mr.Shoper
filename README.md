@@ -3,7 +3,7 @@
 Tuwaiq Academy Third Project.
 ONE Android Application
 ## Overview:
-This project represents an android application **ONE**, which helps the user display images based on their current location plus navigate to any image anywhere.
+This project represents an android application **ONE**, which helps the user display and shop different items. 
 ## Technologies used:
 This application was built using the following technologies:
 ### For Designing the logo of the app:
@@ -15,9 +15,9 @@ This application was built using the following technologies:
 ### For Programming the app:
 * [IntelliJ IDEA](https://www.jetbrains.com/idea/download/#section=windows) for improving code quality.
 * Android Architecture Components:Firebase,LiveData,ViewModel and Data binding.
-* Firebase.
-* RecyclerViews & Adapters.
-* Required Libraries.
+* Firebase
+* RecyclerViews & Adapters
+* Required Libraries
 * Figma
 * Mok Api
 * Fake Api
@@ -41,7 +41,7 @@ link to Figma [Figma Wireframe](https://www.figma.com/file/QHvjxddhgB8A2wAlkHwUO
 
 - As a user I want to see the details of each image so that I can see additional information about it (such as title and price).
 
-- As a user I want to have profile so that I can save my information in it.
+- As a user I want to have profile so that I can save my information on it.
 
 - as a user I want to add the products to the cart so that I can buy them later.
 
@@ -134,13 +134,14 @@ Follow the steps below to get started with the project's development environment
  -----------------------------------------------------------------
  
 ## Development Process and Problem-solving Strategy:
-Firstly, I brainstormed some ideas related to the requirement of the app and then took a general idea of the design and the mechanisim of some popular apps from app store.
+Firstly, I brainstormed some ideas related to the requirements of the app and then took a general idea of the design and the mechanisim of some popular apps from app store.
 Secondly, I designed a logo according to the purpose of the app and gave it a name.
 Thirdly, I designed the screens of each of them suitable for a specific action using the Figma, after that I statred programming the app using the android studio by dividing the project into several tasks: at first, I installed the required libraries and dependencies and the required api from [FakeApi](https://fakestoreapi.com/).
 For many problems that I faced, I need first to decided the nature of the error (if it's syntax, runtime or logical), and then find the solution accordingly.Such solutions that can be disovered when debugging the error, using (Log.d) to find the location of the error, searching for similar cases online in [stackoverflow](https://stackoverflow.com/) and asking for the help from the experts.
 ## Unsolved Problems which would be fixed in future iterations:
 * using the firestore for checkout in the cart fragment.
 * some minor issues regarding the enhancment of the design to make the user expereince more dynamic.
+* adding the price, subtotal, charge in the cart.
 
 ## My favorite functions work:
 * sharing images
