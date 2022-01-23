@@ -7,7 +7,7 @@ ONE Android Application
 This project represents an android application **ONE**, which helps the user display and shop different items. 
 ## Technologies used:
 This application was built using the following technologies:
-## For Designing the logo of the app:
+### For Designing the logo of the app:
 * Canva
 
 ### For Designing the pages of the app"
