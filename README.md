@@ -6,7 +6,7 @@ ONE Android Application
 <img width="373" alt="logo" src="https://user-images.githubusercontent.com/91452331/150319291-9fdda635-34d1-4f26-9bb4-5f93efcc108b.png">
 This project represents an android application **ONE**, which helps the user display and shop different items. 
 ## Technologies used:
-This application was built using the following technologies:
+### This application was built using the following technologies:
 
 ### For Designing the logo of the app:
 
