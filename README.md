@@ -142,7 +142,8 @@ Follow the steps below to get started with the project's development environment
 ## Development Process and Problem-solving Strategy:
 *   Firstly, I brainstormed some ideas related to the requirements of the app and then took a general idea of the design and the mechanisim of some popular apps from app store.
 *   Secondly, I designed a logo according to the purpose of the app and gave it a name.
-*   Thirdly, I designed the screens of each of them suitable for a specific action using the Figma, after that I statred programming the app using the android studio by dividing *   Fourth, I divided the project into several tasks: at first, I installed the required libraries and dependencies and the required api from [FakeApi]  (https://fakestoreapi.com/).
+*   Thirdly, I designed the screens of each of them for a specific action using the Figma, after that I statred programming the app using the android studio by dividing 
+*   Fourth, I divided the project into several tasks: at first, I installed the required libraries and dependencies and the required api from [FakeApi]  (https://fakestoreapi.com/).
 For many problems that I faced, I need first to decided the nature of the error (if it's syntax, runtime or logical), and then find the solution accordingly.Such solutions that can be disovered when debugging the error, using (Log.d) to find the location of the error, searching for similar cases online in [stackoverflow](https://stackoverflow.com/) and asking for the help from the experts.
 ## Unsolved Problems which would be fixed in future iterations:
 * using the firestore for checkout in the cart fragment.
